@@ -1,0 +1,190 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+:root {
+    --primary : #4064FF;
+    --primary-light:#F3F5FF;
+    --warning: #F6A609;
+    --light:#F7F7FC;
+    --light-white :#D9DBE9;
+    --light-dark:#6E7191;
+    --highlight-red :#F23E14;
+    --negative-red: #FF6262;
+    --positive:#13A64E;
+    --positive-light: #DCFFEA;
+    --favourite : #F21464;
+    --client-font : 'Satoshi', sans-serif;  
+
+}
+body{@apply font-client text-[#1F1F39]}
+.sidebar-active {@apply !opacity-100 !visible}
+.sidebar-active > div {@apply !translate-x-0 transition-all duration-500}
+@layer components {
+
+    /*===================================
+            LAYOUT PART START
+    ====================================*/
+ 
+  .container { @apply max-w-[1238px] mx-auto px-4}
+  .row { @apply flex flex-wrap -m-3 }
+  .col-1 { @apply w-1/6 p-3 }
+  .col-2 { @apply w-1/5 p-3 }
+  .col-3 { @apply w-1/4 p-3 }
+  .col-4 { @apply w-1/3 p-3 }
+  .col-5 { @apply w-2/5 p-3 }
+  .col-6 { @apply w-1/2 p-3 }
+  .col-7 { @apply w-3/5 p-3 }
+  .col-8 { @apply w-2/3 p-3 }
+  .col-9 { @apply w-3/4 p-3 }
+  .col-10 { @apply w-4/5 p-3 }
+  .col-11 { @apply w-5/6 p-3 }
+  .col-12 { @apply w-full p-3 }
+
+  .dropdown-group { @apply relative leading-[0px] }
+  .dropdown-btn { @apply cursor-pointer }
+  .dropdown-list { @apply hidden }
+  .dropdown-list.active { @apply block}
+
+  /* .menudropdown-group { @apply relative  } */
+  .menudropdown-btn { @apply cursor-pointer }
+  .menudropdown-list { @apply hidden }
+  .menudropdown-list.category_active { @apply block }
+  .menudropdown-group .category_active > button{@apply !text-primary !bg-primary-light}
+  .header.active{@apply fixed top-0 w-full z-[50]}
+
+  .field-checkbox { --checkbox-size: 24px;}
+  .field-checkbox { @apply cursor-pointer appearance-none relative inline-flex isolate }
+  .field-checkbox::before { @apply content-[''] w-[var(--checkbox-size)] h-[var(--checkbox-size)] rounded-md inline-block border border-[#454F5E] transition-all duration-300 }
+  .field-checkbox::after { @apply content-['✓'] absolute w-[var(--checkbox-size)] h-[var(--checkbox-size)] leading-[var(--checkbox-size)] text-center text-xs inset-0 rounded-md bg-transparent opacity-0 transition-all duration-300 }
+  .field-checkbox:checked { @apply before:border-primary after:bg-primary after:text-white after:opacity-100 }
+  
+  .fa-chevron-down{@apply transition-all duration-300 ease-in-out;}
+  .fa-chevron-down.rotate {transform: rotate(180deg);}
+  
+  .swiper .active {@apply !bg-primary !text-white shadow-buttonprimary}
+  .blogSwiper .swiper-slide , .brandSwiper .swiper-slide,  .shopSwiper .swiper-slide{@apply !mr-0};
+  .trendySwiper .swiper-slide{@apply !mr-0 !w-fit}
+  .tabcontent {animation: fadeEffect 1s;}
+
+  .swiper-slide { @apply bg-cover bg-center}
+  .detailsSwiper .swiper-slide {@apply border-none}
+  .detailsSwiper .swiper-slide-thumb-active img {@apply !border !border-primary}
+
+  .description-opacity{ background: linear-gradient(178deg, rgba(255, 255, 255, 0.00) 1.33%, #FFF 50.37%, #FFF 98.43%);}
+  .description-visible{@apply !h-auto !overflow-visible}  
+.db-order-status .check { @apply !bg-positive !text-white !border-none}
+.db-order-status .check + p { @apply text-black }
+.db-order-status .active { @apply !bg-positive !text-white !border-none}
+.db-order-status .active + p{ @apply text-positive }
+.cart-switch:checked + label { @apply text-white bg-[#F23E14] }
+
+.address-label.active { @apply border-primary bg-primary-light border}
+
+.modal { @apply fixed top-0 left-1/2 -translate-x-1/2 z-60 invisible opacity-0 w-full h-full overflow-y-auto transition bg-modal-bg backdrop-blur-sm}
+.ff-modal { @apply lg:top-[74px] }
+.info-modal { @apply z-70 }
+.modal.ff-modal.active .modal-dialog { @apply lg:mt-10 lg:mb-32 }
+.modal.active { @apply visible opacity-100 }
+.modal-dialog { @apply w-full mx-auto max-w-lg rounded-xl transition bg-white }
+.modal.active .modal-dialog { @apply my-10 }
+.modal-header { @apply flex justify-between gap-5 p-4 border-b border-slate-200 }
+.modal-title { @apply capitalize text-lg font-medium }
+.modal-body { @apply p-4 }
+.modal-footer { @apply p-4 border-t border-slate-200 }
+.modal-btns { @apply flex flex-wrap justify-end gap-3 mt-3 }
+.modal-btn-fill { @apply inline-flex items-center gap-1.5 capitalize !text-sm py-1.5 px-3 rounded-md border border-primary text-white bg-primary }
+.modal-btn-outline { @apply inline-flex items-center gap-1.5 capitalize !text-sm py-1.5 px-3 rounded-md border border-gray-200 !text-gray-600 bg-white }
+.modal-close { @apply leading-none text-xl text-[#FB4E4E]  }
+
+.payment-fieldset { @apply grid grid-cols-1 md:grid-cols-3 grid-flow-row-dense justify-center gap-3 md:gap-4 }
+.payment-label { @apply p-3 bg-light w-full h-12 flex flex-wrap items-center gap-2 rounded-xl text-center cursor-pointer relative transition-all duration-300 z-[10]}
+.payment-label.active { @apply border-primary bg-primary-light border}
+.payment-label input { @apply absolute top-1/2 left-1/2 opacity-0}
+.payment-label input:checked {@apply border !bg-primary-light !border-primary}
+.payment-label img { @apply h-6 }
+.payment-label span { @apply text-sm capitalize }
+
+.iti{@apply w-full}
+.positive{@apply bg-[#DCFFEA] text-[#13A64E] py-1 px-2 rounded-[4px] w-fit}
+.warning{@apply bg-[#FFF5DF] text-[#E89806] py-1 px-2 rounded-[4px] w-fit}
+.negative{@apply bg-[#FFF0F0] text-[#E93C3C] py-1 px-2 rounded-[4px] w-fit}
+.edit {@apply text-highlight-red bg-[#FFF2EF] text-xl w-8 h-8 rounded-lg flex items-center justify-center}
+.show{@apply text-primary bg-[#F3F5FF] text-xl w-8 h-8 rounded-lg flex items-center justify-center}
+.coupon-text{@apply text-highlight-red }
+.order-details tr td:first-child{@apply font-medium}
+.shipping-details tr td:first-child{@apply whitespace-nowrap align-baseline font-medium}
+
+.drawer { @apply w-screen h-full fixed top-0 right-0 z-[70] opacity-0 invisible bg-drawer-bg backdrop-blur-sm transition }
+.drawer.active { @apply opacity-100 visible }
+.drawer-content { @apply fixed top-0  left-0  -translate-x-full z-[50] w-full max-w-xl h-screen overflow-y-auto transition-all duration-300 bg-white }
+.drawer.active .drawer-content { @apply  -translate-x-0 }
+.db-tab-btn.active { @apply !text-white !bg-primary !shadow-buttonprimary}
+.category.active { @apply !text-primary !bg-[#F3F5FF] !shadow-none}
+.category.active >i  { @apply !text-primary}
+.db-tab-div { @apply hidden }
+.db-tab-div.active { @apply block }
+
+#time div{@apply absolute text-center text-black font-medium text-sm}
+#time .circle {@apply relative }
+#time .circle svg{@apply -rotate-90}
+
+.fill{@apply !text-[#E89806]}
+#output-image{@apply rounded-lg h-[86px]}
+#output-image:last-child{@apply mr-3}
+input[type="number"]{@apply [&::-webkit-inner-spin-button]:appearance-none [&::-webkit-outer-spin-button]:appearance-none}
+.productdetailsBtn {@apply !bg-primary !text-white}
+
+.productfabouriteBtn{@apply text-highlight-red}
+.shop_chat {@apply ml-3 text-sm font-normal py-2 px-3 rounded-t-2xl rounded-br-2xl rounded-bl-[2px] bg-[#FFF2EF]}
+.shop_chat div:last-child{@apply absolute text-xs bottom-0 left-0 -mb-5 mr-2 text-light-dark}
+.user_chat {@apply mr-3 text-sm font-normal py-2 px-3 rounded-t-2xl rounded-bl-2xl rounded-br-[2px] bg-light}
+.user_chat div:last-child{@apply absolute text-xs bottom-0 right-0 -mb-5  text-light-dark}
+.active_chat {@apply border-l-4 ps-3 bg-primary-light}
+.thin-scrolling { @apply overflow-y-auto transition }
+.thin-scrolling:hover::-webkit-scrollbar-thumb { @apply bg-primary }
+.thin-scrolling::-webkit-scrollbar { @apply w-[1px] }
+.thin-scrolling::-webkit-scrollbar { @apply rounded-2xl bg-transparent }
+.login_gradient{ background: linear-gradient(90deg, #FFF , #D9DBE9)}
+
+.required{@apply after:content-['*'] after:text-highlight-red}
+#cookie.open { @apply visible -translate-y-0 transition-all duration-500 sm:bottom-6 }
+#time .circle svg circle{ 
+  width: 52px;
+  height: 52px;
+  fill: transparent;
+  stroke-linecap: round;
+  stroke-width: 3;
+  stroke: #D9DBE9;
+}
+
+#time .circle svg circle:nth-child(2){
+  stroke:#4064FF;
+  stroke-dasharray: 160;
+  
+}
+.rating .circle svg circle{
+  width: 52px;
+  height: 52px;
+  fill: transparent;
+  stroke-linecap: round;
+  stroke-width: 3;
+  stroke: #D9DBE9;
+
+}
+.rating .circle svg circle:nth-child(2){
+  stroke:#4064FF;
+  stroke-dasharray: 160;
+  stroke-dashoffset: 160;
+}
+.gm-style .place-card-large{
+  display: none !important;
+}
+
+@keyframes fadeEffect {
+  from {opacity: 0;}
+  to {opacity: 1;}
+}
+
+}

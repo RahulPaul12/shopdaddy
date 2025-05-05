@@ -1,0 +1,1124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../fonts/iconly/iconly.css">
+    <link rel="stylesheet" href="../../fonts/typography/satoshi/Satoshi.css">
+    <link rel="stylesheet" href="../../lib/swiper/swiper-bundle.min.css">
+    <link rel="stylesheet" href="../../css/style.css">
+
+    <script defer src="../../js/script.js"></script>
+    <script defer src="../../lib/swiper/swiper-bundle.min.js"></script>
+    <script defer src="../../lib/swiper/initialize.js"></script>
+
+    <title>Order-Details-Return</title>
+</head>
+<body>
+
+
+    <!--====================================
+                HEADER PART START  
+    =====================================-->
+    <header class="pt-3 shadow-header bg-white w-full z-[20] fixed top-0">
+        <div class="container pb-4 lg:pb-0">
+            <!-- Top Navigation Bar -->
+             <div class="flex justify-between items-center text-sm font-normal mb-6 md:mb-8">
+                <nav class="text-sm font-normal">
+                    <ul class="flex gap-8">
+                        <li class="hidden lg:block"><a href="#">Contact Us</a></li>
+                        <li class="hidden lg:block"><a href="#">About Us</a></li>
+                        <li class="hidden lg:block"><a href="#">FAQ</a></li>
+                        <li><a href="#" class="flex items-center"><i class="lab-line-call-calling text-base mr-2"></i>+98563214589</a></li>
+                    </ul>  
+                </nav>
+                <div class="flex ">
+                    <div class="relative dropdown-group">
+                        <button class="dropdown-btn flex items-center justify-center  gap-2 rounded-xl ">
+                            <i class="lab-line-currencies text-base"></i>
+                            <span id="current-currency" class="whitespace-nowrap">USD</span>
+                            <i class="dropdown-icon lab-line-chevron-down text-xs "></i>
+                        </button>
+                        <ul class="dropdown-list text-left w-full absolute top-6 right-0 z-[30] text-sm font-normal bg-white shadow-header p-4 rounded-xl">
+                            <li class="pb-3 hover:text-primary"><a href="">USD</a></li>
+                            <li class="pb-3 hover:text-primary"><a href="">BDT</a></li>
+                            <li class="pb-3 hover:text-primary"><a href="">SAR</a></li>
+                            <li class="pb-3 hover:text-primary"><a href="">DEM</a></li>
+                            <li class="hover:text-primary"><a href="">TRY</a></li>
+                        </ul>
+                    </div>
+                    <div class="relative ps-8 dropdown-group">
+                        <button class="dropdown-btn flex items-center justify-center gap-2 rounded-xl transition h-6" >
+                            <img id="current-flag" src="../../images/flag/united-states.png" alt="Current Flag"  class="w-4 h-4 rounded-full"> 
+                            <span id="current-lang" class="whitespace-nowrap">English</span>
+                            <i class="dropdown-icon lab-line-chevron-down text-xs"></i>
+                        </button>
+                        <ul class="dropdown-list max-w-28 w-full text-sm absolute top-6 right-0 z-[30] font-normal bg-white shadow-header p-4 rounded-xl hidden">
+                            <li class="pb-3 hover:text-primary"><a href="" class="flex items-center gap-2"><img src="../../images/flag/united-states.png" class="w-4 h-4 rounded-full" alt="US">English</a></li>
+                            <li class="pb-3 hover:text-primary"><a href="" class="flex items-center gap-2"><img src="../../images/flag/bangladesh.png" class="w-4 h-4 rounded-full" alt="US">Bangla</a></li>
+                            <li class="pb-3 hover:text-primary"><a href="" class="flex items-center gap-2"><img src="../../images/flag/china.png" class="w-4 h-4 rounded-full" alt="US">China</a></li>
+                            <li class="pb-3 hover:text-primary"><a href="" class="flex items-center gap-2"><img src="../../images/flag/germany.png" class="w-4 h-4 rounded-full" alt="US">German</a></li>
+                            <li class="hover:text-primary"><a href="" class="flex items-center gap-2"><img src="../../images/flag/saudi-arabia.png" class="w-4 h-4 rounded-full" alt="US">Arabia</a></li>
+                        </ul>
+                    </div>
+                </div>
+             </div>
+             <div class="flex items-center hidden">  
+                <button class="search-hide lab-line-long-arrow-left text-2xl mr-2"></button>
+                <div class="dropdown-group relative w-full h-11 border border-light-white focus-within:border-primary rounded-xl lg:flex items-center ps-3 p-[3px] flex transition-all duration-300">
+                    <button class="dropdown-btn text-left flex items-center gap-2 text-sm font-medium whitespace-nowrap pr-2">All Categories <i class="dropdown-icon lab-fill-arrow-down text-xl" ></i></button>
+                    <ul class="dropdown-list text-left absolute top-11 left-0 z-10 text-sm font-normal bg-white shadow-header p-4 rounded-xl">
+                        <li class="pb-2"><a href="">All Categories </a></li>
+                        <li class="py-2"><a href="">Computer & Accessories</a></li>
+                        <li class="py-2"><a href="">Smartphone & Gadgets</a></li>
+                        <li class="py-2"><a href="">Electronics</a></li>
+                        <li class="py-2"><a href="">Beauty & Personal Care</a></li>
+                        <li class="py-2"><a href="">Sports & Entertainment</a></li>
+                        <li class="py-2"><a href="">Home & Living</a></li>
+                        <li class="py-2"><a href="">Jewelry & Watches</a></li>
+                        <li class="pt-2"><a href="">Kids & Toy</a></li>
+                    </ul>
+                    <form action="#" class="w-full flex h-full">
+                        <input class="appearance-none font-normal text-sm text-[#6E7191] border-l pl-4 w-full h-full focus:outline-none" type="text" placeholder="Search for product">
+                        <button class="ml-auto p-2 py-1 bg-primary rounded-lg cursor-pointer flex justify-center items-center">
+                            <i class="lab-line-magnifer text-xl text-white" ></i>
+                        </button>
+                    </form>
+                </div>
+            </div>
+            <!-- Search and User Info -->
+            <div class="flex items-center justify-between lg:justify-normal gap-x-[68px] lg:pb-4 lg:border-b ">
+               <button data-drawer="#sidebar" class=" block lg:hidden">
+                    <i class="lab-line-dashboard text-2xl "></i>
+               </button> 
+                <a href="./home.html" class="max-w-36 flex-shrink-0">
+                    <img src="../../images/header/logo.png" alt="Logo" class="w-full">
+                </a>
+                <div class="dropdown-group max-w-[550px] relative w-full h-11 border border-light-white focus-within:border-primary rounded-xl lg:flex items-center ps-3 p-[3px]  hidden transition-all duration-300">
+                    <button class="dropdown-btn text-left flex items-center gap-2 text-sm font-medium whitespace-nowrap pr-2">All Categories <i class="dropdown-icon lab-fill-arrow-down text-xl" ></i></button>
+                        <ul class="dropdown-list text-left w-fit absolute top-11 left-0  z-[30] text-sm font-normal bg-white shadow-header p-4 rounded-xl hidden">
+                            <li class="pb-2 hover:text-primary active:text-primary"><a href="">Computer & Accessories</a></li>
+                            <li class="py-2 hover:text-primary active:text-primary"><a href="">Smartphone & Gadgets</a></li>
+                            <li class="py-2 hover:text-primary active:text-primary"><a href="">Electronics</a></li>
+                            <li class="py-2 hover:text-primary active:text-primary"><a href="">Beauty & Personal Care</a></li>
+                            <li class="py-2 hover:text-primary active:text-primary"><a href="">Sports & Entertainment</a></li>
+                            <li class="py-2 hover:text-primary active:text-primary"><a href="">Home & Living</a></li>
+                            <li class="py-2 hover:text-primary active:text-primary"><a href="">Jewelry & Watches</a></li>
+                            <li class="pt-2 hover:text-primary active:text-primary"><a href="">Kids & Toy</a></li>
+                        </ul>
+                    <form action="#" class="w-full flex h-full">
+                        <input class="appearance-none font-normal text-sm text-[#6E7191] border-l pl-4 w-full h-full focus:outline-none" type="text" placeholder="Search for product">
+                        <button class="ml-auto p-2 py-1 bg-primary rounded-lg cursor-pointer flex justify-center items-center">
+                            <i class="lab-line-magnifer text-xl text-white" ></i>
+                        </button>
+                    </form>
+                </div>
+                <button class="search-open block lg:hidden">
+                    <i class="lab-line-magnifer text-2xl "></i>
+                </button>
+                <div class="hidden lg:flex gap-6 items-center">
+                    <div class="relative dropdown-group">
+                        <button class="dropdown-btn flex flex-shrink gap-x-2 items-center group">
+                            <i class="lab-line-administrator border rounded-full w-11 h-11 flex items-center justify-center text-xl group-hover:bg-primary-light transition-all duration-300"></i>
+                            <span>
+                                <small class="text-xs font-normal">Login/Signup</small>
+                                <p class="text-sm font-medium whitespace-nowrap">My Account</p>
+                            </span>
+                        </button>
+                        <ul class="dropdown-list text-left min-w-48 w-full absolute top-11 right-0 text-sm font-normal bg-white shadow-header p-4 rounded-xl hidden">
+                            <li class="pb-3 text-sm font-medium group"><a href="./dashboard.html" class="flex items-center gap-2 group-hover:text-primary" ><i class="lab-dashboard text-base text-[#A0A3BD] group-hover:text-primary "></i> Dashboard</a></li>
+                            <li class="pb-3 text-sm font-medium group"><a href="./order-history.html" class="flex items-center gap-2 group-hover:text-primary" ><i class="lab-fill-bag text-base text-[#A0A3BD] group-hover:text-primary "></i> Order History</a></li>
+                            <li class="pb-3 text-sm font-medium group"><a href="./return_orders.html" class="flex items-center gap-2 group-hover:text-primary" > <i class="lab-fill-refresh text-base text-[#A0A3BD] group-hover:text-primary "></i>Return Orders</a></li>
+                            <li class="pb-3 text-sm font-medium group"><a href="./my-review.html" class="flex items-center gap-2 group-hover:text-primary" ><i class="lab-fill-my-reviews text-base text-[#A0A3BD] group-hover:text-primary "></i> My Reviews</a></li>
+                            <li class="pb-3 text-sm font-medium group"><a href="./account_edit_info.html" class="flex items-center gap-2 group-hover:text-primary" ><i class="lab-fill-account-info text-base text-[#A0A3BD] group-hover:text-primary "></i> Account Info</a></li>
+                            <li class="pb-3 text-sm font-medium group"><a href="./customer_address.html" class="flex items-center gap-2 group-hover:text-primary" ><i class="lab-fill-map text-base text-[#A0A3BD] group-hover:text-primary "></i>Addresses</a></li>
+                            <li class="pb-3 text-sm font-medium group"><a href="./chat.html" class="flex items-center gap-2 group-hover:text-primary" ><i class="lab-fill-message text-base text-[#A0A3BD] group-hover:text-primary "></i>Message with Us</a></li>
+                            <li class="text-sm font-medium group"><a href="./login.html" class="flex items-center gap-2 group-hover:text-primary" ><i class="lab-fill-logout text-base text-[#A0A3BD] group-hover:text-primary "></i>Logout</a></li>
+                        </ul>
+                    </div>
+                    <div class="flex gap-4">
+                        <div class="relative dropdown-group">
+                            <button class="dropdown-btn border rounded-full w-11 h-11 flex items-center justify-center relative hover:bg-primary-light transition-all duration-300">
+                                <i class="lab-line-notification-alert text-xl"></i>
+                                <div class="absolute top-2 right-1 rounded-full bg-primary w-2.5 h-2.5"></div>
+                            </button>
+                            <div class="dropdown-list text-left absolute top-12 right-0 text-sm font-normal bg-white shadow-header min-w-80 w-full rounded-xl hidden max-h-[500px] h-full overflow-y-scroll thin-scrolling">
+                               <div class="p-4 border-b border-light-white">
+                                  <h6 class="text-left text-sm font-bold">All Notifications</h6>
+                               </div>
+                               <div class="px-4">
+                                    <div class="py-3 border-b border-light-white">
+                                        <p class="mb-2 text-sm font-normal">Order No: <span class="font-medium">20221221</span> & Shop: Underground Fashion has been <span class="text-negative-red font-medium">Delivered</span></p>
+                                        <small class="text-light-dark">13 Nov, 2024</small>
+                                    </div>
+                                    <div class="py-3 border-b border-light-white">
+                                        <p class="mb-2 text-sm font-normal">Order No: <span class="font-medium">20221221</span> & Shop: Underground Fashion has been <span class="text-negative-red font-medium">Delivered</span></p>
+                                        <small class="text-light-dark">13 Nov, 2024</small>
+                                    </div>
+                                    <div class="py-3 border-b border-light-white">
+                                        <p class="mb-2 text-sm font-normal">Order No: <span class="font-medium">20221221</span> & Shop: Underground Fashion has been <span class="text-negative-red font-medium">Delivered</span></p>
+                                        <small class="text-light-dark">13 Nov, 2024</small>
+                                    </div>
+                                    <div class="py-3">
+                                        <p class="mb-2 text-sm font-normal">Order No: <span class="font-medium">20221221</span> & Shop: Underground Fashion has been <span class="text-negative-red font-medium">Delivered</span></p>
+                                        <small class="text-light-dark">13 Nov, 2024</small>
+                                    </div>
+                               </div>
+                            </div>
+                        </div>
+                        <a href="./compare.html" class="border rounded-full w-11 h-11 flex items-center justify-center relative hover:bg-primary-light transition-all duration-300">
+                            <i class="lab-fill-horizontal text-xl"></i>
+                            <span class="absolute top-2 right-1 rounded-full bg-primary w-2.5 h-2.5"></span>
+                        </a>
+                        <button class="border rounded-full w-11 h-11 flex items-center justify-center relative hover:bg-primary-light transition-all duration-300">
+                            <i class="lab-line-heart-round text-xl"></i>
+                            <span class="absolute top-2 right-1 rounded-full bg-primary w-2.5 h-2.5"></span>
+                        </button>
+                        <div class="relative dropdown-group">
+                            <button class="dropdown-btn flex items-center justify-center relative gap-x-2 border rounded-full w-11 h-11 hover:bg-primary-light transition-all duration-300">
+                                <i class="lab-line-cart text-xl"></i>
+                                <span class="absolute top-2 right-1 rounded-full bg-primary w-2.5 h-2.5"></span>
+                            </button>
+                            <div class="dropdown-list text-left absolute top-12 right-0 text-sm font-normal bg-white shadow-header min-w-80 w-full p-4 rounded-xl hidden">
+                                <div class="flex gap-x-2 pb-3">
+                                    <div class="w-20 h-20 rounded-2xl">
+                                        <img src="../../images/cart/prdt1.png" class="w-full h-full" alt="product1">
+                                    </div>
+                                    <div class="text-ellipsis">
+                                        <h4 class="whitespace-nowrap text-sm font-medium mb-2">New collection Stylish Comb</h4>
+                                        <p class="text-sm font-normal"> <span class="text-[#6E7191]">color</span>: Green</p>
+                                        <p class="text-sm font-normal"> <span class="text-[#6E7191]">Region</span>: US</p>
+                                        <p class="text-sm font-normal"> <span class="text-[#6E7191]">Storage</span>: 128GB</p>
+                                        <div class="flex justify-between items-center mt-2">
+                                            <p class="text-sm font-medium text-primary">$899.99</p>
+                                            <div class="max-w-[70px] w-full h-full bg-light rounded-[20px] flex justify-around">
+                                                <button ><i class="lab-fill-delete text-red-600 text-base"></i></button>
+                                                <input type="text" class="text-center outline-none w-5 bg-transparent" value="3"></input>
+                                                <button ><i class="lab-fill-circle-plus text-base text-primary"></i></button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <hr class="mb-3 h-[1px] bg-[#EFF0F6]">
+                                <div class="flex gap-x-2 pb-3">
+                                    <div class="w-20 h-20 rounded-2xl">
+                                        <img src="../../images/cart/prdt2.png" class="w-full h-full" alt="product2">
+                                    </div>
+                                    <div class="overflow-hidden text-ellipsis">
+                                        <h4 class="whitespace-nowrap text-sm font-medium mb-2">New collection Stylish Comb</h4>
+                                        <p class="text-sm font-normal"> <span class="text-[#6E7191]">color</span>: Green</p>
+                                        <p class="text-sm font-normal"> <span class="text-[#6E7191]">Region</span>: US</p>
+                                        <p class="text-sm font-normal"> <span class="text-[#6E7191]">Storage</span>: 128GB</p>
+                                        <div class="flex justify-between items-center mt-2">
+                                            <p class="text-sm font-medium text-primary">$899.99</p>
+                                            <div class="max-w-[70px] w-full h-full bg-light rounded-[20px] flex justify-around">
+                                                <button ><i class="lab-fill-circle-minus text-base"></i></button>
+                                                <input type="text" class="text-center outline-none w-5 bg-transparent" value="3"></input>
+                                                <button ><i class="lab-fill-circle-plus text-base text-primary"></i></button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="flex justify-between border-t border-dashed border-t-[#EFF0F6] pt-3">
+                                    <span class="text-base font-medium">Subtotal</span>
+                                    <span class="text-base font-bold text-primary">$1799.98</span>
+                                </div>
+                                <div class="flex justify-between mt-4">
+                                     <a href="./cart.html" class="py-[6px] px-3 border border-primary rounded-lg text-primary whitespace-nowrap hover:bg-primary hover:text-white transition-all duration-300 ">View Cart</a>
+                                     <a href="./shipping-information.html" class="py-[6px] px-3 bg-primary rounded-lg text-white">Checkout</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Main Navigation Bar -->
+            <div class="lg:flex justify-between items-center text-base font-medium py-2 hidden">
+                <div class="flex gap-8">
+                    <div class="relative menudropdown-group">
+                        <button class="menudropdown-btn bg-primary rounded-lg py-[10px] px-3 flex gap-x-8 items-center text-base font-bold text-white"><span><i class="lab-fill-dashboard text-white mr-2"></i> Browse Categories</span><i  class="menudropdown-icon lab-fill-arrow-down flex-1"></i>
+                        </button>
+                        <ul class="menudropdown-list text-left whitespace-nowrap min-w-60 w-full absolute top-11 left-0 text-sm font-normal bg-white shadow-header p-4 rounded-xl hidden">
+                            <li class="relative"><a href="" class=" pb-3 text-left w-full flex items-center border-b border-b-[#EFF0F6]"><i class="lab-fill-t-shirt text-[#6E7191] text-base mr-2"></i> <span class="flex-1">Clothing & Fashion  </span><i class="lab-line-chevron-right"></i></a></li>
+                            <li class="relative menudropdown-group">
+                                <button class="menudropdown-btn py-3 text-left w-full flex items-center border-b border-b-[#EFF0F6]"><i class="lab-fill-display text-[#6E7191] text-base mr-2"></i> <span class="flex-1">Computer & Accessories</span><i class="lab-line-chevron-right"></i></button>
+                                <ul class="menudropdown-list absolute min-w-60 w-full left-56 top-0 bg-white shadow-header p-4 rounded-xl">
+                                    <li class=""><a href="" class="pb-3 text-left w-full flex items-center border-b border-b-[#EFF0F6]"><span class=" flex-1">Desktop & Components </span><i class="lab-line-chevron-right"></i></a></li>
+                                    <li class=" relative menudropdown-group">
+                                        <button class="menudropdown-btn py-3 text-left w-full flex items-center border-b border-b-[#EFF0F6]"><span class=" flex-1">Laptop & Components</span><i class="lab-line-chevron-right"></i></button>
+                                        <ul class="menudropdown-list absolute min-w-60 h-auto w-full left-56 top-0 bg-white shadow-header p-4 rounded-xl ">
+                                            <li class=""><a href="" class="pb-3 text-left h-full w-full flex items-center border-b border-b-[#EFF0F6]"><span class="flex-1">All Laptop</span></a></li>
+                                            <li class=""><a href="" class="py-3 text-left w-full flex items-center border-b border-b-[#EFF0F6]"><span class=" flex-1">Gaming Laptop</span></a></li>
+                                            <li class=""><a href="" class="py-3 text-left w-full flex items-center border-b border-b-[#EFF0F6]"><span class=" flex-1">Laptop Bag</span></a></li>
+                                            <li class=""><a href="" class="py-3 text-left w-full flex items-center border-b border-b-[#EFF0F6]"><span class=" flex-1">Laptop RAM</span></a></li>
+                                            <li class="relative menudropdown-group">
+                                                <button  class="menudropdown-btn pt-3 text-left w-full flex items-center"><span class=" flex-1">Laptop Accessories</span><i class="lab-line-chevron-right"></i></button>
+                                                <ul class="menudropdown-list absolute min-w-60 w-full left-56 top-0 bg-white shadow-header p-4 rounded-xl">
+                                                    <li class="pb-3 w-full text-left border-b border-b-[#EFF0F6]"><a href="" >Laptop Cooler</a></li>
+                                                    <li class="py-3 w-full text-left border-b border-b-[#EFF0F6]"><a href="" >Laptop Charger/Adapter</a></li>
+                                                    <li class="py-3 w-full text-left border-b border-b-[#EFF0F6]"><a href="" >Laptop Stand</a></li>
+                                                    <li class="py-3 w-full text-left border-b border-b-[#EFF0F6]"><a href="" >Laptop Battery</a></li>
+                                                    <li class="pt-3 w-full text-left "><a href="" >Laptop Display</a></li>
+                                                </ul>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                    <li class=""><a href="" class="py-3 text-left w-full flex items-center border-b border-b-[#EFF0F6]"><span class=" flex-1">Gaming</span><i class="lab-line-chevron-right"></i></a></li>
+                                    <li class=""><a href="" class="py-3 text-left w-full flex items-center border-b border-b-[#EFF0F6]"><span class=" flex-1">Accessories</span><i class="lab-line-chevron-right"></i></a></li>
+                                    <li class=""><a href="" class="py-3 text-left w-full flex items-center border-b border-b-[#EFF0F6]"><span class=" flex-1">Official Equipment</span><i class="lab-line-chevron-right"></i></a></li>
+                                    <li class=""><a href="" class="py-3 text-left w-full flex items-center border-b border-b-[#EFF0F6]"><span class=" flex-1">Network & Router</span><i class="lab-line-chevron-right"></i></a></li>
+                                    <li class=""><a href="" class="pt-3 text-left w-full flex items-center"><span class=" flex-1">Monitors & Displays</span><i class="lab-line-chevron-right"></i></a></li>
+                                </ul>
+                            </li>
+                            <li class=""><a href="" class="text-left w-full flex items-center border-b border-b-[#EFF0F6] py-3"><i class="lab-fill-smartphone-rotate-orientation text-[#6E7191] text-base mr-2"></i> <span class="flex-1">Smartphone & Gadgets</span><i class="lab-line-chevron-right"></i></a></li>
+                            <li class=""><a href="" class="text-left w-full flex items-center border-b border-b-[#EFF0F6] py-3"><i class="lab-fill-tv text-[#6E7191] text-base mr-2"></i> <span class="flex-1">Electronics</span><i class="lab-line-chevron-right"></i></a></li>
+                            <li class=""><a href="" class="text-left w-full flex items-center border-b border-b-[#EFF0F6] py-3"><i class="lab-fill-cosmetic text-[#6E7191] text-base mr-2"></i> <span class="flex-1">Beauty & Personal Care</span><i class="lab-line-chevron-right"></i></a></li>
+                            <li class=""><a href="" class="text-left w-full flex items-center border-b border-b-[#EFF0F6] py-3"><i class="lab-fill-balls text-[#6E7191] text-base mr-2"></i> <span class="flex-1">Sports & Entertainment</span><i class="lab-line-chevron-right"></i></a></li>
+                            <li class=""><a href="" class="text-left w-full flex items-center border-b border-b-[#EFF0F6] py-3"><i class="lab-fill-armchair text-[#6E7191] text-base mr-2"></i> <span class="flex-1">Home & Living</span><i class="lab-line-chevron-right"></i></a></li>
+                            <li class=""><a href="" class="text-left w-full flex items-center border-b border-b-[#EFF0F6] py-3"><i class="lab-fill-medal-star text-[#6E7191] text-base mr-2"></i> <span class="flex-1">Jewelry & Watches</span><i class="lab-line-chevron-right"></i></a></li>
+                            <li class=""><a href="" class="text-left w-full flex items-center pt-3"><i class="lab-fill-body text-[#6E7191] text-base mr-2 "></i> <span class="flex-1">Kids & Toy</span><i class="lab-line-chevron-right"></i></a></li>
+                        </ul>
+                    </div>
+                    <nav class="flex items-center">
+                        <ul class="flex gap-6">
+                            <li><a href="./home.html" class="hover:text-primary active:text-primary">Home</a></li>
+                            <li><a href="#" class="hover:text-primary active:text-primary">Campaign</a></li>
+                            <li><a href="#today_deals" class="hover:text-primary active:text-primary">Today’s Deals</a></li>
+                            <li><a href="#flash_sale" class="hover:text-primary active:text-primary">Flash Sale</a></li>
+                            <li><a href="./blog.html" class="hover:text-primary active:text-primary">Blog</a></li>
+                        </ul>
+                    </nav>
+                </div>
+                    <a href="./seller_info.html" class="text-base font-bold flex items-center hover:text-primary active:text-primary">
+                        <i class="lab-line-branches text-xl mr-2"></i> Become a Seller
+                    </a>
+            </div>
+        </div>
+    </header> 
+    <!--====================================
+                HEADER PART END   
+    =====================================-->
+
+    <!--====================================
+                SIDEBAR PART START   
+    =====================================-->
+    <aside id="sidebar" class="drawer transition-all duration-500 ease-in-out">
+        <div class="drawer-content w-72 h-full bg-white thin-scrolling">
+                <div class="flex justify-between items-start p-4">
+                    <a href="./index.html" class="w-28"><img src="../../images/header/logo.png" alt="logo" class="w-full"></a> 
+                    <span class="drawer-close cursor-pointer ml-28 text-primary">
+                        <i class="lab-fill-close-circle text-negative-red text-xl"></i>
+                    </span>
+                </div>
+                <div class="flex flex-col gap-4 p-4 border-b">
+                    <div class="menu-link flex flex-shrink gap-x-2 items-center  w-full relative">
+                        <button class="border rounded-full w-11 h-11 flex items-center px-2 justify-center">
+                            <i class="lab-line-administrator text-xl"></i>
+                        </button>
+                        <div>
+                            <small class="text-xs font-normal">Login/Signup</small>
+                            <p class="text-sm font-medium whitespace-nowrap">My Account</p>
+                        </div>
+                    </div>
+                    <div class="menu-link cursor-pointer flex items-center gap-x-2 ">
+                        <button class="border rounded-full w-11 h-11 flex items-center justify-center  px-4 py-2 relative">
+                            <i class="lab-fill-horizontal text-xl"></i>
+                            <div class="absolute top-2 right-1 rounded-full bg-primary w-2.5 h-2.5"></div>
+                        </button>
+                        <p class="text-sm font-medium">Comparison</p>
+                    </div>
+                    <div  data-modal="#notification" class="menu-link flex items-center gap-x-2">
+                        <button class="border rounded-full w-11 h-11 relative ">
+                            <i class="lab-line-notification-alert text-xl"></i>
+                            <span class="absolute top-2 right-1 rounded-full bg-primary w-2.5 h-2.5"></span>
+                        </button>
+                        <p class="text-sm font-medium">Notification</p>
+                    </div>
+                </div>
+                <nav class="p-4 w-full border-b border-light-white">
+                    <ul class="flex flex-col text-lg">
+                        <li class="menu-link w-full py-2 rounded-md hover:text-white"><a href="#">Home</a></li>
+                        <li class="menu-link w-full py-2 rounded-md hover:text-white"><a href="#">Campaign</a></li>
+                        <li class="menu-link w-full py-2 rounded-md hover:text-white"><a href="#">Flash Sale</a></li>
+                        <li class="menu-link w-full py-2 rounded-md hover:text-white"><a href="#">Blog</a></li>
+                        <li class="menu-link w-full py-2 rounded-md hover:text-white"><a href="#" class="text-base font-bold flex items-center"><i class="lab-line-branches text-xl mr-2"></i> Become a Seller</a> </li>
+                    </ul>
+                    <div class="dropdown-group pt-2">
+                        <button class="dropdown-btn flex items-center justify-center gap-2 rounded-xl transition h-6 text-base">
+                            <img id="current-flag" src="../../images/flag/united-states.png" alt="Current Flag"  class="w-5 h-5 rounded-full"> 
+                            <span id="current-lang" class="whitespace-nowrap">English</span>
+                            <i class="dropdown-icon lab-line-chevron-down text-xs"></i>
+                        </button>
+                        <ul class="dropdown-list w-full text-sm font-normal bg-white shadow-header p-4 rounded-xl hidden mt-2">
+                            <li class="pb-3 hover:text-primary"><a href="" class="flex items-center gap-2"><img src="../../images/flag/united-states.png" class="w-4 h-4 rounded-full" alt="US">English</a></li>
+                            <li class="pb-3 hover:text-primary"><a href="" class="flex items-center gap-2"><img src="../../images/flag/bangladesh.png" class="w-4 h-4 rounded-full" alt="US">Bangla</a></li>
+                            <li class="pb-3 hover:text-primary"><a href="" class="flex items-center gap-2"><img src="../../images/flag/china.png" class="w-4 h-4 rounded-full" alt="US">China</a></li>
+                            <li class="pb-3 hover:text-primary"><a href="" class="flex items-center gap-2"><img src="../../images/flag/germany.png" class="w-4 h-4 rounded-full" alt="US">German</a></li>
+                            <li class="hover:text-primary"><a href="" class="flex items-center gap-2"><img src="../../images/flag/saudi-arabia.png" class="w-4 h-4 rounded-full" alt="US">Arabia</a></li>
+                        </ul>
+                    </div>
+                </nav>
+                <div class="px-4 w-full ">
+                    <ul class="flex flex-col text-lg">
+                        <li class="menu-link w-full pt-4 pb-2 rounded-md hover:text-white text-sm font-normal"><a href="#">Contact Us</a></li>
+                        <li class="menu-link w-full py-2 rounded-md hover:text-white text-sm font-normal"><a href="#">About Us</a></li>
+                        <li class="menu-link w-full py-2 rounded-md hover:text-white text-sm font-normal"><a href="#">FAQ</a></li>    
+                    </ul>
+                </div>
+        </div>
+    </aside>
+    <!--====================================
+                SIDEBAR PART END   
+    =====================================-->
+
+    
+    <!--====================================
+                DASHBOARD PART START   
+    =====================================-->
+    <section class="container">
+        <div class="row mb-12 mt-28 md:mt-32 lg:mt-48 pt-3 md:pt-6">
+            <div class="hidden lg:block lg:col-3">
+                <div class="p-4 mb-6 rounded-2xl  flex flex-col justify-center items-center bg-dashboard bg-center bg-cover">
+                    <a href="#" class="w-[52px] h-[52px] rounded-full mb-2"><img class="w-full h-full" src="../../images/dashboard/profile.png" alt="user profile"></a> 
+                    <h3 class="text-base font-bold mb-1">Jonathon Doe</h3>
+                    <p class="text-sm font-normal mb-1">johndoe@gmail.com</p>
+                    <p class="text-sm font-normal">01365987456</p>
+                </div>
+                <nav class="border border-light-white rounded-2xl overflow-hidden py-3">
+                    <a href="./dashboard.html" class="flex items-center gap-2 hover:border-l-4 border-primary p-4 hover:p-3 h-11 group  hover:bg-primary-light">
+                        <i class="lab-dashboard text-base text-[#A0A3BD] group-hover:text-primary"></i>
+                        <span class="text-sm font-medium text-black group-hover:text-primary">Dashboard</span>
+                    </a>
+                     <a href="./order-history.html" class="flex items-center gap-2 border-l-4 border-primary p-3 h-11 group bg-primary-light">
+                         <i class="lab-fill-bag-check  text-base  text-primary"></i>
+                         <span class="text-sm font-medium text-primary">Order History</span>
+                     </a>
+                     <a href="./return_orders.html" class="flex items-center gap-2 hover:border-l-4 border-primary p-4 hover:p-3 h-11 group  hover:bg-primary-light">
+                         <i class="lab-fill-refresh text-base text-[#A0A3BD] group-hover:text-primary"></i>
+                         <span class="text-sm font-medium text-black group-hover:text-primary">Return Orders</span>
+                     </a>
+                     <a href="./my-review.html" class="flex items-center gap-2 hover:border-l-4 border-primary p-4 hover:p-3 h-11 group  hover:bg-primary-light">
+                         <i class="lab-fill-my-reviews text-base text-[#A0A3BD] group-hover:text-primary"></i>
+                         <span class="text-sm font-medium text-black group-hover:text-primary">My Reviews</span>
+                     </a>
+                     <a href="./account_edit_info.html" class="flex items-center gap-2 hover:border-l-4 border-primary p-4 hover:p-3 h-11 group  hover:bg-primary-light">
+                         <i class="lab-fill-account-info text-base text-[#A0A3BD] group-hover:text-primary"></i>
+                         <span class="text-sm font-medium text-black group-hover:text-primary">Account Info</span>
+                     </a>
+                     <a href="./customer_address.html" class="flex items-center gap-2 hover:border-l-4 border-primary p-4 hover:p-3 h-11 group  hover:bg-primary-light">
+                         <i class="lab-fill-location text-base text-[#A0A3BD] group-hover:text-primary"></i>
+                         <span class="text-sm font-medium text-black group-hover:text-primary">Addresses</span>
+                     </a>
+                     <a href="./chat.html" class="flex items-center gap-2 hover:border-l-4 border-primary p-4 hover:p-3 h-11 group  hover:bg-primary-light">
+                         <i class="lab-fill-message text-base text-[#A0A3BD] group-hover:text-primary"></i>
+                         <span class="text-sm font-medium text-black group-hover:text-primary">Messages</span>
+                     </a>
+                     <a href="./login.html" class="flex items-center gap-2 hover:border-l-4 border-primary p-4 hover:p-3 h-11 group  hover:bg-primary-light">
+                         <i class="lab-fill-logout text-base text-[#A0A3BD] group-hover:text-primary"></i>
+                         <span class="text-sm font-medium text-black group-hover:text-primary">Logout</span>
+                     </a>
+                </nav>
+            </div>
+            <div class="col-12 lg:col-9">
+                <button type="button" class="mb-4 text-primary text-2xl font-bold flex items-center gap-3"><a href="./order-history.html" class="lab-line-undo "></a> Order Details</button>
+                <div class="border border-light-white p-4 rounded-2xl mb-6">
+                    <div class="grid grid-cols-1 lg:grid-cols-2 grid-row-dense gap-4 md:gap-6">
+                        <div class="rounded-2xl bg-light">
+                            <table class="order-details table-auto border-separate border-spacing-2 md:border-spacing-3 ">
+                                <tbody class="text-sm">
+                                  <tr>
+                                    <td >Order No:</td>
+                                    <td class="text-highlight-red font-bold">#16532478965</td>
+                                  </tr>
+                                  <tr>
+                                    <td>Order Date:</td>
+                                    <td>7 July 2022, 04:13 PM</td>
+                                  </tr>
+                                  <tr>
+                                    <td>Total Amount:</td>
+                                    <td class="font-bold">$1360.20</td>
+                                  </tr>
+                                  <tr>
+                                    <td>Shipping Type:</td>
+                                    <td>Express Shipping</td>
+                                  </tr>
+                                  <tr>
+                                    <td>Payment Status:</td>
+                                    <td><div class="warning">Unpaid</div></td>
+                                  </tr>
+                                  <tr>
+                                    <td>Payment Type:</td>
+                                    <td>Cash on Delivery</td>
+                                  </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <div class="rounded-2xl bg-light">
+                            <table class="shipping-details table-auto border-separate border-spacing-2 md:border-spacing-3">
+                                <tbody class="text-sm">
+                                  <tr>
+                                    <td >Name:</td>
+                                    <td>Jonathon Doe</td>
+                                  </tr>
+                                  <tr>
+                                    <td>Phone:</td>
+                                    <td>012365478963</td>
+                                  </tr>
+                                  <tr>
+                                    <td>Email:</td>
+                                    <td>jonathon.doe@gmail.com</td>
+                                  </tr>
+                                  <tr>
+                                    <td>Shipping Address:</td>
+                                    <td>House:30, Road:17, Rupnagar Residential Area, Mirpur-2, Dhaka District - Dhaka City - Bangladesh</td>
+                                  </tr>
+                                  <tr>
+                                    <td>Billing Address:</td>
+                                    <td>House:30, Road:17, Rupnagar Residential Area, Mirpur-2, Dhaka District - Dhaka City - Bangladesh</td>
+                                  </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+                <div class="border border-light-white rounded-2xl mb-6">
+                    <div class="px-3 lg:px-4 py-2 lg:py-4 flex items-center justify-between ">
+                        <div class="flex items-center justify-between gap-3">
+                            <img class="w-6 md:w-9 h-6 md:h-9 rounded-full" src="../../images/topShop/Shoplogo1.png" alt="shoplogo">
+                            <h3 class="text-base md:text-xl font-medium">Export Fashion House</h3>
+                        </div>
+                        <button type="reset" class="border border-negative-red rounded-lg text-negative-red text-sm font-bold h-9 px-4 whitespace-nowrap hover:bg-negative-red hover:text-white transition-all duration-300">Cancel Order</button>
+                    </div>
+                    <div class="border-t border-light-white">
+                        <div class="p-3 lg:p-4 flex flex-col items-center justify-center">
+                            <div class="text-center mb-10">
+                                <h5 class="text-xl md:text-2xl font-bold">Thank You</h5>
+                                <p>Your Order status is as follows</p>
+                            </div>
+                            <div class="w-full">
+                                <div class="mb-8 ">
+                                    <ul class="multi-step mx-4 pb-8 md:mx-12 flex items-center justify-center">
+                                        <li class="after:bg-light-white w-full flex after:content-[''] after:w-full after:h-1 last:after:hidden last:w-fit">
+                                            <a href="" class="flex flex-col items-center gap-4 -mt-[13px] relative">
+                                                <i class="lab-fill-save text-lg border-positive bg-positive text-white w-[30px] h-[30px] border-[4px] leading-[20px] rounded-full text-center"></i>
+                                                <span class="text-xs md:text-sm font-normal whitespace-nowrap capitalize absolute -bottom-8">Order Pending</span>
+                                            </a>
+                                        </li>
+                                        <li class="after:bg-light-white w-full flex after:content-[''] after:w-full after:h-1 last:after:hidden last:w-fit">
+                                            <a href="" class="flex flex-col items-center gap-4 -mt-[13px] relative">
+                                                <i class="lab-fill-save text-lg border-positive bg-white text-white w-[30px] h-[30px] border-[4px] leading-[20px] rounded-full text-center"></i>
+                                                <span class="text-xs md:text-sm font-normal whitespace-nowrap capitalize absolute -bottom-8">Confirmed</span>
+                                            </a>
+                                        </li>
+                                        <li class="after:bg-light-white w-full flex after:content-[''] after:w-full after:h-1 last:after:hidden last:w-fit">
+                                            <a href="" class="flex flex-col items-center gap-4 -mt-[13px] relative">
+                                                <i class="lab-fill-save text-lg border-success bg-success text-white w-[30px] h-[30px] border-[4px] leading-[20px] rounded-full text-center"></i>
+                                                <span class="text-xs md:text-sm font-normal whitespace-nowrap capitalize absolute -bottom-8">Processed</span>
+                                            </a>
+                                        </li>
+                                        <li class="after:bg-light-white w-full flex after:content-[''] after:w-full after:h-1 last:after:hidden last:w-fit">
+                                            <a href="" class="flex flex-col items-center gap-4 -mt-[13px] relative">
+                                                <i class="lab-fill-save text-lg border-success bg-success text-white w-[30px] h-[30px] border-[4px] leading-[20px] rounded-full text-center"></i>
+                                                <span class="text-xs md:text-sm font-normal whitespace-nowrap capitalize absolute -bottom-8">Order ongoing</span>
+                                            </a>
+                                        </li>
+                                        <li class="after:bg-light-white w-full flex after:content-[''] after:w-full after:h-1 last:after:hidden last:w-fit">
+                                            <a href="" class="flex flex-col items-center gap-4 -mt-[13px] relative">
+                                                <i class="lab-fill-save text-lg border-success bg-success text-white w-[30px] h-[30px] border-[4px] leading-[20px] rounded-full text-center"></i>
+                                                <span class="text-xs md:text-sm font-normal whitespace-nowrap capitalize absolute -bottom-8">Delivered</span>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="grid grid-cols-1 md:grid-cols-3 grid-flow-row-dense gap-y-3 gap-4">
+                                    <div class="col-span-full md:col-span-2 ">
+                                        <ul class="flex flex-col rounded-2xl bg-light">
+                                            <li class="flex items-start gap-2 md:gap-4 w-full p-3 md:p-4 border-b border-dashed border-light-white">
+                                                <img class="w-12 md:w-20 h-12 md:h-20 rounded-lg md:rounded-2xl" src="../../images/cart/prdt1.png" alt="product1">
+                                                <div class="overflow-hidden w-full">
+                                                    <h4 class="text-sm font-medium mb-2">New collection Stylish Combo Angelic T-shirt</h4>
+                                                    <div class="flex gap-4 items-center">
+                                                        <span class="text-sm font-normal"> <small class="text-sm text-[#6E7191]">color</small>: Green</span>
+                                                        <span class="text-sm font-normal"> <small class="text-sm text-[#6E7191]">Storage</small>: 128GB</span>
+                                                    </div>
+                                                    <div class="flex flex-wrap gap-4 items-center">
+                                                        <p class="text-base md:text-xl font-bold">$899.99</p>
+                                                        <small class="text-sm font normal"><span class=" text-light-dark">Qty:</span> 01</small>
+                                                    </div>
+                                                </div>
+                                            </li>
+                                            <li class="flex items-start gap-2 md:gap-4 w-full p-3 md:p-4 ">
+                                                <img class="w-12 md:w-20 h-12 md:h-20 rounded-lg md:rounded-2xl" src="../../images/cart/prdt1.png" alt="product1">
+                                                <div class="overflow-hidden w-full">
+                                                    <h4 class="text-sm font-medium mb-2">New collection Stylish Combo Angelic T-shirt</h4>
+                                                    <div class="flex gap-4 items-center">
+                                                        <span class="text-sm font-normal"> <small class="text-sm text-[#6E7191]">color</small>: Green</span>
+                                                        <span class="text-sm font-normal"> <small class="text-sm text-[#6E7191]">Storage</small>: 128GB</span>
+                                                    </div>
+                                                    <div class="flex flex-wrap gap-4 items-center">
+                                                        <p class="text-base md:text-xl font-bold">$899.99</p>
+                                                        <small class="text-sm font normal"><span class=" text-light-dark">Qty:</span> 01</small>
+                                                    </div>
+                                                </div>
+                                            </li>    
+                                        </ul>
+                                    </div>
+                                    <div class="col-span-full md:col-span-1 bg-light rounded-2xl">
+                                        <h3 class="capitalize text-base font-bold my-3 text-center">Order Summary</h3>
+                                        <ul class="flex flex-col gap-3 p-3 border-t border-b border-dashed border-light-white">
+                                            <li class="flex items-center justify-between text-heading">
+                                                <span class="text-sm font-normal leading-6 capitalize">Subtotal</span>
+                                                <span class="text-sm font-medium leading-6 capitalize">$240.00</span>
+                                            </li>
+                                            <li class="flex items-center justify-between text-heading">
+                                                <span class="text-sm font-normal leading-6 capitalize">Tax</span>
+                                                <span class="text-sm font-medium leading-6 capitalize">$12.00</span>
+                                            </li>
+                                            <li class="flex items-center justify-between text-heading">
+                                                <span class="text-sm font-normal leading-6 capitalize">Voucher</span>
+                                                <span class="text-sm font-medium leading-6 capitalize">$3.00</span>
+                                            </li>
+                                            <li class="flex items-center justify-between text-heading">
+                                                <span class="text-sm font-normal leading-6 capitalize">Discount</span>
+                                                <span class="text-sm font-medium leading-6 capitalize">$0.00</span>
+                                            </li>
+                                        </ul>
+                                        <div class="flex items-center justify-between p-3">
+                                            <h4 class="text-sm font-bold leading-6 capitalize">Total</h4>
+                                            <h5 class="text-sm font-bold leading-6 capitalize">$5.60</h5>
+                                        </div>
+                                    </div>
+                                </div>
+                             </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="border border-light-white rounded-2xl mb-6">
+                    <div class="px-3 lg:px-4 py-2 lg:py-4 flex items-center justify-between ">
+                        <div class="flex items-center justify-between gap-3">
+                            <img class="w-6 md:w-9 h-6 md:h-9 rounded-full" src="../../images/topShop/Shoplogo1.png" alt="shoplogo">
+                            <h3 class="text-base md:text-xl font-medium">Export Fashion House</h3>
+                        </div>
+                        <a href="./write-review.html" class="bg-primary-light rounded-lg text-primary text-sm font-bold h-9 px-4 whitespace-nowrap flex items-center justify-center">Write review</a>
+                    </div>
+                    <div class="border-t border-light-white">
+                        <div class="p-3 lg:p-4 flex flex-col items-center justify-center">
+                            <div class="text-center mb-10">
+                                <h5 class="text-xl md:text-2xl font-bold">Thank You</h5>
+                                <p>Your Order status is as follows</p>
+                            </div>
+                            <div class="w-full">
+                                <div class="mb-8 ">
+                                    <ul class="multi-step mx-4 pb-8 md:mx-12 flex items-center justify-center">
+                                        <li class="after:bg-light-white w-full flex after:content-[''] after:w-full after:h-1 last:after:hidden last:w-fit">
+                                            <a href="" class="flex flex-col items-center gap-4 -mt-[13px] relative">
+                                                <i class="lab-fill-save text-lg border-positive bg-positive text-white w-[30px] h-[30px] border-[4px] leading-[22px] rounded-full text-center"></i>
+                                                <span class="text-xs md:text-sm font-normal whitespace-nowrap capitalize absolute -bottom-8">Order Pending</span>
+                                            </a>
+                                        </li>
+                                        <li class="after:bg-light-white w-full flex after:content-[''] after:w-full after:h-1 last:after:hidden last:w-fit">
+                                            <a href="" class="flex flex-col items-center gap-4 -mt-[13px] relative">
+                                                <i class="lab-fill-save text-lg border-positive bg-positive text-white w-[30px] h-[30px] border-[4px] leading-[22px] rounded-full text-center"></i>
+                                                <span class="text-xs md:text-sm font-normal whitespace-nowrap capitalize absolute -bottom-8">Confirmed</span>
+                                            </a>
+                                        </li>
+                                        <li class="after:bg-light-white w-full flex after:content-[''] after:w-full after:h-1 last:after:hidden last:w-fit">
+                                            <a href="" class="flex flex-col items-center gap-4 -mt-[13px] relative">
+                                                <i class="lab-fill-save text-lg border-positive bg-positive text-white w-[30px] h-[30px] border-[4px] leading-[22px] rounded-full text-center"></i>
+                                                <span class="text-xs md:text-sm font-normal whitespace-nowrap capitalize absolute -bottom-8">Processed</span>
+                                            </a>
+                                        </li>
+                                        <li class="after:bg-light-white w-full flex after:content-[''] after:w-full after:h-1 last:after:hidden last:w-fit">
+                                            <a href="" class="flex flex-col items-center gap-4 -mt-[13px] relative">
+                                                <i class="lab-fill-save text-lg border-positive bg-positive text-white w-[30px] h-[30px] border-[4px] leading-[22px] rounded-full text-center"></i>
+                                                <span class="text-xs md:text-sm font-normal whitespace-nowrap capitalize absolute -bottom-8">Order Ongoing</span>
+                                            </a>
+                                        </li>
+                                        <li class="after:bg-light-white w-full flex after:content-[''] after:w-full after:h-1 last:after:hidden last:w-fit">
+                                            <a href="" class="flex flex-col items-center gap-4 -mt-[13px] relative">
+                                                <i class="lab-fill-save text-lg border-positive bg-positive text-white w-[30px] h-[30px] border-[4px] leading-[22px] rounded-full text-center"></i>
+                                                <span class="text-xs md:text-sm font-normal whitespace-nowrap capitalize absolute -bottom-8">Delivered</span>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="grid grid-cols-1 md:grid-cols-3 grid-flow-row-dense gap-y-3 gap-4">
+                                    <div class="col-span-full md:col-span-2 ">
+                                        <ul class="flex flex-col rounded-2xl bg-light max-h-60">
+                                            <li class="flex items-start gap-2 md:gap-4 w-full p-3 md:p-4 border-b border-dashed border-light-white">
+                                                <img class="w-12 md:w-20 h-12 md:h-20 rounded-lg md:rounded-2xl" src="../../images/cart/prdt1.png" alt="product1">
+                                                <div class="overflow-hidden w-full">
+                                                    <h4 class="text-sm font-medium mb-2">New collection Stylish Combo Angelic T-shirt</h4>
+                                                    <div class="flex gap-4 items-center">
+                                                        <span class="text-sm font-normal"> <small class="text-sm text-[#6E7191]">color</small>: Green</span>
+                                                        <span class="text-sm font-normal"> <small class="text-sm text-[#6E7191]">Storage</small>: 128GB</span>
+                                                    </div>
+                                                    <div class="flex flex-wrap gap-4 items-center">
+                                                        <p class="text-base md:text-xl font-bold">$899.99</p>
+                                                        <small class="text-sm font normal"><span class=" text-light-dark">Qty:</span> 01</small>
+                                                    </div>
+                                                </div>
+                                            </li>
+                                            <li class="flex items-start gap-2 md:gap-4 w-full p-3 md:p-4 ">
+                                                <img class="w-12 md:w-20 h-12 md:h-20 rounded-lg md:rounded-2xl" src="../../images/cart/prdt1.png" alt="product1">
+                                                <div class="overflow-hidden w-full">
+                                                    <h4 class="text-sm font-medium mb-2">New collection Stylish Combo Angelic T-shirt</h4>
+                                                    <div class="flex gap-4 items-center">
+                                                        <span class="text-sm font-normal"> <small class="text-sm text-[#6E7191]">color</small>: Green</span>
+                                                        <span class="text-sm font-normal"> <small class="text-sm text-[#6E7191]">Storage</small>: 128GB</span>
+                                                    </div>
+                                                    <div class="flex flex-wrap gap-4 items-center">
+                                                        <p class="text-base md:text-xl font-bold">$899.99</p>
+                                                        <small class="text-sm font normal"><span class=" text-light-dark">Qty:</span> 01</small>
+                                                    </div>
+                                                </div>
+                                            </li>    
+                                        </ul>
+                                    </div>
+                                    <div class="col-span-full md:col-span-1 bg-light rounded-2xl">
+                                        <h3 class="capitalize text-base font-bold my-3 text-center">Order Summary</h3>
+                                        <ul class="flex flex-col gap-3 p-3 border-t border-b border-dashed border-light-white">
+                                            <li class="flex items-center justify-between text-heading">
+                                                <span class="text-sm font-normal leading-6 capitalize">Subtotal</span>
+                                                <span class="text-sm font-medium leading-6 capitalize">$240.00</span>
+                                            </li>
+                                            <li class="flex items-center justify-between text-heading">
+                                                <span class="text-sm font-normal leading-6 capitalize">Tax</span>
+                                                <span class="text-sm font-medium leading-6 capitalize">$12.00</span>
+                                            </li>
+                                            <li class="flex items-center justify-between text-heading">
+                                                <span class="text-sm font-normal leading-6 capitalize">Voucher</span>
+                                                <span class="text-sm font-medium leading-6 capitalize">$3.00</span>
+                                            </li>
+                                            <li class="flex items-center justify-between text-heading">
+                                                <span class="text-sm font-normal leading-6 capitalize">Discount</span>
+                                                <span class="text-sm font-medium leading-6 capitalize">$0.00</span>
+                                            </li>
+                                        </ul>
+                                        <div class="flex items-center justify-between p-3">
+                                            <h4 class="text-sm font-bold leading-6 capitalize">Total</h4>
+                                            <h5 class="text-sm font-bold leading-6 capitalize">$5.60</h5>
+                                        </div>
+                                    </div>
+                                </div>
+                             </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="flex gap-3 items-center float-end">
+                    <a href="./request-return.html" class="h-12 px-6 rounded-xl bg-negative-red text-base font-bold text-white flex justify-center items-center">Request Return</a>
+                    <button class="h-12 px-6 rounded-xl bg-primary text-base font-bold text-white">Download Receipt</button>
+                </div>
+                
+            </div>
+        </div>
+    </section>
+    <!--====================================
+                DASHBOARD PART START   
+    =====================================-->
+
+     <!--====================================
+           CART MODAL PART START  
+    =====================================-->
+    <div id="cart" class="modal">
+        <div class="bg-white !w-full h-auto fixed bottom-14 rounded-t-2xl !rounded-b-none">
+            <div class="modal-header border-none pb-0 float-right">
+                <button class="modal-close lab-fill-close-circle "></button>
+            </div>
+            <div class="modal-body">
+                <div class="flex gap-x-2 pb-3">
+                    <div class="w-20 h-20 rounded-2xl">
+                        <img src="../../images/cart/prdt1.png" class="w-full h-full" alt="product1">
+                    </div>
+                    <div class="text-ellipsis">
+                        <h4 class="whitespace-nowrap text-sm font-medium mb-2">New collection Stylish Comb</h4>
+                        <p class="text-sm font-normal"> <span class="text-[#6E7191]">color</span>: Green</p>
+                        <p class="text-sm font-normal"> <span class="text-[#6E7191]">Region</span>: US</p>
+                        <p class="text-sm font-normal"> <span class="text-[#6E7191]">Storage</span>: 128GB</p>
+                        <div class="flex justify-between items-center mt-2">
+                            <p class="text-sm font-medium text-primary">$899.99</p>
+                            <div class="max-w-[70px] w-full h-full bg-light rounded-[20px] flex justify-around">
+                                <button ><i class="lab-fill-delete text-red-600 text-base"></i></button>
+                                <input type="text" class="text-center outline-none w-5 bg-transparent" value="3"></input>
+                                <button ><i class="lab-fill-circle-plus text-base text-primary"></i></button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <hr class="mb-3 h-[1px] bg-[#EFF0F6]">
+                <div class="flex gap-x-2 pb-3">
+                    <div class="w-20 h-20 rounded-2xl">
+                        <img src="../../images/cart/prdt2.png" class="w-full h-full" alt="product2">
+                    </div>
+                    <div class="overflow-hidden text-ellipsis">
+                        <h4 class="whitespace-nowrap text-sm font-medium mb-2">New collection Stylish Comb</h4>
+                        <p class="text-sm font-normal"> <span class="text-[#6E7191]">color</span>: Green</p>
+                        <p class="text-sm font-normal"> <span class="text-[#6E7191]">Region</span>: US</p>
+                        <p class="text-sm font-normal"> <span class="text-[#6E7191]">Storage</span>: 128GB</p>
+                        <div class="flex justify-between items-center mt-2">
+                            <p class="text-sm font-medium text-primary">$899.99</p>
+                            <div class="max-w-[70px] w-full h-full bg-light rounded-[20px] flex justify-around">
+                                <button ><i class="lab-fill-circle-minus text-base"></i></button>
+                                <input type="text" class="text-center outline-none w-5 bg-transparent" value="3"></input>
+                                <button ><i class="lab-fill-circle-plus text-base text-primary"></i></button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="flex justify-between border-t border-dashed border-t-[#EFF0F6] pt-3">
+                    <span class="text-base font-medium">Subtotal</span>
+                    <span class="text-base font-bold text-primary">$1799.98</span>
+                </div>
+                <div class="flex justify-between mt-4">
+                     <button class="py-[6px] px-3 border border-primary rounded-lg text-primary whitespace-nowrap">View Cart</button>
+                     <button class="py-[6px] px-3 bg-primary rounded-lg text-white">Checkout</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--====================================
+           CART MODAL PART END   
+    =====================================-->
+
+    <!--====================================
+           CATEGORY MODAL PART START  
+    =====================================-->
+    <div id="category" class="modal bg-white z-[10]">
+        <div class="mt-28 relative">
+            <div class="pt-6"> 
+                <div class="max-w-32 border-r border-light-white thin-scrolling">
+                    <button type="button" data-target="#clothing" class="category db-tab-btn active px-2 py-3 rounded-xl mx-auto max-w-24 text-gray-700 font-medium flex flex-col items-center justify-between w-full">
+                        <i class="lab-fill-t-shirt text-[#6E7191] text-base mr-2"></i>
+                        <span class="text-sm">Clothing & Fashion</span>
+                     </button>
+                     <button type="button" data-target="#gadget" class="category db-tab-btn px-2 py-3 rounded-xl mx-auto max-w-24  text-gray-700 font-medium flex flex-col items-center justify-between w-full">
+                        <i class="lab-fill-smartphone-rotate-orientation text-[#6E7191] text-base mr-2"></i> 
+                        <span class="text-sm">Smartphone & Gadgets</span>
+                     </button>
+                     <button type="button" data-target="#electronics" class="category db-tab-btn px-2 py-3 rounded-xl mx-auto max-w-24  text-gray-700 font-medium flex flex-col items-center justify-between w-full">
+                        <i class="lab-fill-tv text-[#6E7191] text-base mr-2"></i> 
+                        <span class="text-sm">Electronics</span>
+                     </button>
+                     <button type="button" class="db-tab-btn px-2 py-3 rounded-xl mx-auto max-w-24 text-gray-700 font-medium flex flex-col items-center justify-between w-full">
+                        <i class="lab-fill-cosmetic text-[#6E7191] text-base mr-2"></i> 
+                        <span class="text-sm">Beauty & Personal Care</span>
+                     </button>
+                     <button type="button" class="db-tab-btn px-2 py-3 rounded-xl mx-auto max-w-24  text-gray-700 font-medium flex flex-col items-center justify-between w-full">
+                        <i class="lab-fill-balls text-[#6E7191] text-base mr-2"></i> 
+                        <span class="text-sm">Sports & Entertainment</span>
+                     </button>
+                     <button type="button" class="db-tab-btn px-2 py-3 rounded-xl mx-auto max-w-24  text-gray-700 font-medium flex flex-col items-center justify-between w-full">
+                        <i class="lab-fill-armchair text-[#6E7191] text-base mr-2"></i> 
+                        <span class="text-sm">Home & Living</span>
+                     </button>
+                     <button type="button" class="db-tab-btn px-2 py-3 rounded-xl mx-auto max-w-24  text-gray-700 font-medium flex flex-col items-center justify-between w-full">
+                        <i class="lab-fill-medal-star text-[#6E7191] text-base mr-2"></i> 
+                        <span class="text-sm">Jewelry & Watches</span>
+                     </button>
+                     <button type="button" class="db-tab-btn px-2 py-3 rounded-xl mx-auto max-w-24 text-gray-700 font-medium flex flex-col items-center justify-between w-full">
+                        <i class="lab-fill-display text-[#6E7191] text-base mr-2"></i> 
+                        <span class="text-sm">Computer & Accessories</span>
+                     </button>
+                     <button type="button" class="db-tab-btn px-2 py-3 rounded-xl mx-auto max-w-24 text-gray-700 font-medium flex flex-col items-center justify-between w-full">
+                        <i class="lab-fill-body text-[#6E7191] text-base mr-2 "></i> 
+                        <span class="text-sm">Kids & Toy</span>
+                     </button>
+                </div>   
+                <ul id="clothing" class="db-tab-div active  absolute left-32 top-0 p-4 w-[-webkit-fill-available] ">
+                    <li class=""><a href="" class="pb-3 text-left w-full flex items-center border-b border-b-[#EFF0F6]"><span class=" flex-1">1 Desktop & Components </span><i class="lab-line-chevron-right"></i></a></li>
+                    <li class="relative menudropdown-group">
+                        <a href="" class="menudropdown-btn py-3 text-left w-full flex items-center border-b border-b-[#EFF0F6]"><span class=" flex-1">Laptop & Components</span><i class="lab-line-chevron-right"></i></a>
+                        <ul  class="menudropdown-list left-0 top-0 bg-white p-4 rounded-xl ">   
+                            <li><a href="" class="pb-3 text-left w-full flex items-center border-b border-b-[#EFF0F6]"><span class="flex-1">All Laptop</span></a></li>
+                            <li><a href="" class="py-3 text-left w-full flex items-center border-b border-b-[#EFF0F6]"><span class=" flex-1">Gaming Laptop</span></a></li>
+                            <li><a href="" class="py-3 text-left w-full flex items-center border-b border-b-[#EFF0F6]"><span class=" flex-1">Laptop Bag</span></a></li>
+                            <li><a href="" class="py-3 text-left w-full flex items-center border-b border-b-[#EFF0F6]"><span class=" flex-1">Laptop RAM</span></a></li>
+                            <li class="relative menudropdown-group">
+                                <a href="" class="menudropdown-btn pt-3 text-left w-full flex items-center"><span class=" flex-1">Laptop Accessories</span><i class="lab-line-chevron-right"></i></a>
+                                <ul style="height:250px" class="menudropdown-list w-full left-0 top-0 bg-white p-4 rounded-xl">
+                                    <li class=""><a href=""><button class="pb-3 w-full text-left border-b border-b-[#EFF0F6]">Laptop Cooler</button></a></li>
+                                    <li class=""><a href=""><button class="py-3 w-full text-left border-b border-b-[#EFF0F6]">Laptop Charger/Adapter</button></a></li>
+                                    <li class=""><a href=""><button class="py-3 w-full text-left border-b border-b-[#EFF0F6]">Laptop Stand</button></a></li>
+                                    <li class=""><a href=""><button class="py-3 w-full text-left border-b border-b-[#EFF0F6]">Laptop Battery</button></a></li>
+                                    <li class=""><a href=""><button class="pt-3 w-full text-left ">Laptop Display</button></a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class=""><a href="" class="py-3 text-left w-full flex items-center border-b border-b-[#EFF0F6]"><span class=" flex-1">Gaming</span><i class="lab-line-chevron-right"></i></a></li>
+                    <li class=""><a href="" class="py-3 text-left w-full flex items-center border-b border-b-[#EFF0F6]"><span class=" flex-1">Accessories</span><i class="lab-line-chevron-right"></i></a></li>
+                    <li class=""><a href="" class="py-3 text-left w-full flex items-center border-b border-b-[#EFF0F6]"><span class=" flex-1">Official Equipment</span><i class="lab-line-chevron-right"></i></a></li>
+                    <li class=""><a href="" class="py-3 text-left w-full flex items-center border-b border-b-[#EFF0F6]"><span class=" flex-1">Network & Router</span><i class="lab-line-chevron-right"></i></a></li>
+                    <li class=""><a href="" class="pt-3 text-left w-full flex items-center"><span class=" flex-1">Monitors & Displays</span><i class="lab-line-chevron-right"></i></a></li>
+                </ul>        
+                <ul id="gadget" class="db-tab-div absolute left-32 top-0 p-4 w-[-webkit-fill-available] ">
+                    <li class=""><a href="" class="pb-3 text-left w-full flex items-center border-b border-b-[#EFF0F6]"><span class=" flex-1">2 Desktop & Components </span><i class="lab-line-chevron-right"></i></a></li>
+                    <li class="relative menudropdown-group">
+                        <a href="" class="menudropdown-btn py-3 text-left w-full flex items-center border-b border-b-[#EFF0F6]"><span class=" flex-1">Laptop & Components</span><i class="lab-line-chevron-right"></i></a>
+                        <ul  class="menudropdown-list left-0 top-0 bg-white p-4 rounded-xl ">   
+                            <li><a href="" class="pb-3 text-left w-full flex items-center border-b border-b-[#EFF0F6]"><span class="flex-1">All Laptop</span></a></li>
+                            <li><a href="" class="py-3 text-left w-full flex items-center border-b border-b-[#EFF0F6]"><span class=" flex-1">Gaming Laptop</span></a></li>
+                            <li><a href="" class="py-3 text-left w-full flex items-center border-b border-b-[#EFF0F6]"><span class=" flex-1">Laptop Bag</span></a></li>
+                            <li><a href="" class="py-3 text-left w-full flex items-center border-b border-b-[#EFF0F6]"><span class=" flex-1">Laptop RAM</span></a></li>
+                            <li class="relative menudropdown-group">
+                                <a href="" class="menudropdown-btn pt-3 text-left w-full flex items-center"><span class=" flex-1">Laptop Accessories</span><i class="lab-line-chevron-right"></i></a>
+                                <ul style="height:250px" class="menudropdown-list w-full left-0 top-0 bg-white p-4 rounded-xl">
+                                    <li class=""><a href=""><button class="pb-3 w-full text-left border-b border-b-[#EFF0F6]">Laptop Cooler</button></a></li>
+                                    <li class=""><a href=""><button class="py-3 w-full text-left border-b border-b-[#EFF0F6]">Laptop Charger/Adapter</button></a></li>
+                                    <li class=""><a href=""><button class="py-3 w-full text-left border-b border-b-[#EFF0F6]">Laptop Stand</button></a></li>
+                                    <li class=""><a href=""><button class="py-3 w-full text-left border-b border-b-[#EFF0F6]">Laptop Battery</button></a></li>
+                                    <li class=""><a href=""><button class="pt-3 w-full text-left ">Laptop Display</button></a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class=""><a href="" class="py-3 text-left w-full flex items-center border-b border-b-[#EFF0F6]"><span class=" flex-1">Gaming</span><i class="lab-line-chevron-right"></i></a></li>
+                    <li class=""><a href="" class="py-3 text-left w-full flex items-center border-b border-b-[#EFF0F6]"><span class=" flex-1">Accessories</span><i class="lab-line-chevron-right"></i></a></li>
+                    <li class=""><a href="" class="py-3 text-left w-full flex items-center border-b border-b-[#EFF0F6]"><span class=" flex-1">Official Equipment</span><i class="lab-line-chevron-right"></i></a></li>
+                    <li class=""><a href="" class="py-3 text-left w-full flex items-center border-b border-b-[#EFF0F6]"><span class=" flex-1">Network & Router</span><i class="lab-line-chevron-right"></i></a></li>
+                    <li class=""><a href="" class="pt-3 text-left w-full flex items-center"><span class=" flex-1">Monitors & Displays</span><i class="lab-line-chevron-right"></i></a></li>
+                </ul>        
+                <ul id="electronics" class="db-tab-div absolute left-32 top-0 p-4 w-[-webkit-fill-available] ">
+                    <li class=""><a href="" class="pb-3 text-left w-full flex items-center border-b border-b-[#EFF0F6]"><span class=" flex-1">3 Desktop & Components </span><i class="lab-line-chevron-right"></i></a></li>
+                    <li class="relative menudropdown-group">
+                        <a href="" class="menudropdown-btn py-3 text-left w-full flex items-center border-b border-b-[#EFF0F6]"><span class=" flex-1">Laptop & Components</span><i class="lab-line-chevron-right"></i></a>
+                        <ul  class="menudropdown-list left-0 top-0 bg-white p-4 rounded-xl ">   
+                            <li><a href="" class="pb-3 text-left w-full flex items-center border-b border-b-[#EFF0F6]"><span class="flex-1">All Laptop</span></a></li>
+                            <li><a href="" class="py-3 text-left w-full flex items-center border-b border-b-[#EFF0F6]"><span class=" flex-1">Gaming Laptop</span></a></li>
+                            <li><a href="" class="py-3 text-left w-full flex items-center border-b border-b-[#EFF0F6]"><span class=" flex-1">Laptop Bag</span></a></li>
+                            <li><a href="" class="py-3 text-left w-full flex items-center border-b border-b-[#EFF0F6]"><span class=" flex-1">Laptop RAM</span></a></li>
+                            <li class="relative menudropdown-group">
+                                <a href="" class="menudropdown-btn pt-3 text-left w-full flex items-center"><span class=" flex-1">Laptop Accessories</span><i class="lab-line-chevron-right"></i></a>
+                                <ul style="height:250px" class="menudropdown-list w-full left-0 top-0 bg-white p-4 rounded-xl">
+                                    <li class=""><a href=""><button class="pb-3 w-full text-left border-b border-b-[#EFF0F6]">Laptop Cooler</button></a></li>
+                                    <li class=""><a href=""><button class="py-3 w-full text-left border-b border-b-[#EFF0F6]">Laptop Charger/Adapter</button></a></li>
+                                    <li class=""><a href=""><button class="py-3 w-full text-left border-b border-b-[#EFF0F6]">Laptop Stand</button></a></li>
+                                    <li class=""><a href=""><button class="py-3 w-full text-left border-b border-b-[#EFF0F6]">Laptop Battery</button></a></li>
+                                    <li class=""><a href=""><button class="pt-3 w-full text-left ">Laptop Display</button></a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class=""><a href="" class="py-3 text-left w-full flex items-center border-b border-b-[#EFF0F6]"><span class=" flex-1">Gaming</span><i class="lab-line-chevron-right"></i></a></li>
+                    <li class=""><a href="" class="py-3 text-left w-full flex items-center border-b border-b-[#EFF0F6]"><span class=" flex-1">Accessories</span><i class="lab-line-chevron-right"></i></a></li>
+                    <li class=""><a href="" class="py-3 text-left w-full flex items-center border-b border-b-[#EFF0F6]"><span class=" flex-1">Official Equipment</span><i class="lab-line-chevron-right"></i></a></li>
+                    <li class=""><a href="" class="py-3 text-left w-full flex items-center border-b border-b-[#EFF0F6]"><span class=" flex-1">Network & Router</span><i class="lab-line-chevron-right"></i></a></li>
+                    <li class=""><a href="" class="pt-3 text-left w-full flex items-center"><span class=" flex-1">Monitors & Displays</span><i class="lab-line-chevron-right"></i></a></li>
+                </ul>        
+            </div>
+        </div>
+    </div>
+    <!--====================================
+           CATEGORY MODAL PART START  
+    =====================================-->
+
+     <!--====================================
+           COOKIE MODAL PART START  
+    =====================================-->
+    <div id="cookie" class="translate-y-full w-full max-w-full sm:max-w-xs p-4 fixed bottom-0 left-0 sm:left-6 z-[80] rounded-t-xl sm:rounded-xl visible shadow-cookieShadow bg-white transition-all duration-500">
+        <h1 class="text-xl font-bold text-primary mb-3"><i class="lab-fill-cookie-bite"></i> About Cookies</h1>
+        <p class="text-[13px] font-normal mb-6">This website uses cookies to better understand how visitors use our site, for advertising, and to offer you a more personalized experience. By Continuing, we assume your permission to deploy cookies as detailed in our <a class="text-primary underline" href="./cookie_setting.html">Cookie Setting</a>.</p>
+        <div class="flex items-center gap-4">
+            <button class="py-2 px-4 rounded-xl bg-primary text-white text-base font-bold">Accept Cookies</button>
+            <button class="close-cookie py-2 px-4 rounded-xl border text-base font-bold">Close</button>
+        </div>
+    </div>
+     <!--====================================
+           COOKIE MODAL PART START  
+    =====================================-->
+
+    <!--====================================
+           PROFILE MODAL PART START  
+    =====================================-->
+    <aside id="profile" class="drawer transition-all duration-500 ease-in-out" >
+        <div class=" drawer-content w-72 px-4 h-full bg-white">
+            <div class="flex justify-between items-end py-4">
+                <a href="./index.html" class="w-28"><img src="../../images/header/logo.png" alt="logo" class="w-full"></a> 
+                <button class="drawer-close cursor-pointer text-primary">
+                    <i class="lab-fill-close-circle text-negative-red text-xl"></i>
+                </button>
+            </div>
+            <div class="p-4 mb-6 rounded-2xl  flex flex-col justify-center items-center bg-dashboard bg-center bg-cover">
+                <a href="#" class="w-[52px] h-[52px] rounded-full mb-2"><img class="w-full h-full" src="../../images/dashboard/profile.png" alt="user profile"></a> 
+                <h3 class="text-base font-bold mb-1">Jonathon Doe</h3>
+                <p class="text-sm font-normal mb-1">johndoe@gmail.com</p>
+                <p class="text-sm font-normal">01365987456</p>
+            </div>
+            <nav class="border border-light-white rounded-2xl overflow-hidden py-3">
+                <a href="./dashboard.html" class="flex items-center gap-2 hover:border-l-4 border-primary p-4 hover:p-3 h-11 group  hover:bg-primary-light">
+                    <i class="lab-fill-bag-check text-base text-[#A0A3BD] group-hover:text-primary"></i>
+                    <span class="text-sm font-medium text-black group-hover:text-primary">Dashboard</span>
+                </a>
+                 <a href="./order-history.html" class="flex items-center gap-2 border-l-4 border-primary p-3 h-11 group bg-primary-light">
+                     <i class="lab-dashboard text-base  text-primary"></i>
+                     <span class="text-sm font-medium text-primary">Order History</span>
+                 </a>
+                 <a href="./return_orders.html" class="flex items-center gap-2 hover:border-l-4 border-primary p-4 hover:p-3 h-11 group  hover:bg-primary-light">
+                     <i class="lab-fill-refresh text-base text-[#A0A3BD] group-hover:text-primary"></i>
+                     <span class="text-sm font-medium text-black group-hover:text-primary">Return Orders</span>
+                 </a>
+                 <a href="./my-review.html" class="flex items-center gap-2 hover:border-l-4 border-primary p-4 hover:p-3 h-11 group  hover:bg-primary-light">
+                     <i class="lab-fill-my-reviews text-base text-[#A0A3BD] group-hover:text-primary"></i>
+                     <span class="text-sm font-medium text-black group-hover:text-primary">My Reviews</span>
+                 </a>
+                 <a href="./account_edit_info.html" class="flex items-center gap-2 hover:border-l-4 border-primary p-4 hover:p-3 h-11 group  hover:bg-primary-light">
+                     <i class="lab-fill-account-info text-base text-[#A0A3BD] group-hover:text-primary"></i>
+                     <span class="text-sm font-medium text-black group-hover:text-primary">Account Info</span>
+                 </a>
+                 <a href="./customer_address.html" class="flex items-center gap-2 hover:border-l-4 border-primary p-4 hover:p-3 h-11 group  hover:bg-primary-light">
+                     <i class="lab-fill-location text-base text-[#A0A3BD] group-hover:text-primary"></i>
+                     <span class="text-sm font-medium text-black group-hover:text-primary">Addresses</span>
+                 </a>
+                 <a href="./chat.html" class="flex items-center gap-2 hover:border-l-4 border-primary p-4 hover:p-3 h-11 group  hover:bg-primary-light">
+                     <i class="lab-fill-message text-base text-[#A0A3BD] group-hover:text-primary"></i>
+                     <span class="text-sm font-medium text-black group-hover:text-primary">Messages</span>
+                 </a>
+                 <a href="./login.html" class="flex items-center gap-2 hover:border-l-4 border-primary p-4 hover:p-3 h-11 group  hover:bg-primary-light">
+                     <i class="lab-fill-logout text-base text-[#A0A3BD] group-hover:text-primary"></i>
+                     <span class="text-sm font-medium text-black group-hover:text-primary">Logout</span>
+                 </a>
+            </nav>
+        </div>
+    </aside>
+    <!--====================================
+           PROFILE MODAL PART END  
+    =====================================-->
+
+    <!--====================================
+        MOBILE NAV PART START   
+    =====================================-->
+    <nav class="flex items-center justify-between py-3 px-5 fixed bottom-0 left-0 z-[60] w-full drop-shadow-menu rounded-t-xl bg-white lg:hidden">
+        <a href="./home.html" class="flex flex-col items-center gap-1 text-primary">
+            <i class="lab-fill-home-smile text-sm leading-none"></i>
+            <span class="text-xs capitalize">Home</span>
+        </a>
+        <a href="#" id="categorybtn" data-modal="#category" class="flex flex-col items-center gap-1">
+            <i class="lab-line-category text-base leading-none"></i>
+            <span class="text-xs capitalize">Category</span>
+        </a>
+        <button href="#" data-modal="#cart">
+            <div class="w-16 h-16 flex items-center justify-center rounded-full overflow-hidden -mt-10">
+                <div class="relative w-[52px] h-[52px] flex items-center justify-center rounded-full bg-primary drop-shadow-blue ">
+                    <i class="lab-line-cart text-2xl text-white"></i>
+                    <div class="absolute top-2 right-2 w-2.5 h-2.5 rounded-full bg-[#FFBC1F]"></div>
+                </div>
+            </div>
+        </button>
+        <a href="#" class="flex flex-col items-center gap-1">
+            <i class="lab-line-heart-round text-base leading-none"></i>
+            <span class="text-xs capitalize">Wishlist</span>
+        </a>
+        <button type="button" data-drawer="#profile" class="flex flex-col items-center gap-1">
+            <i class="lab-line-administrator text-base leading-none"></i>
+            <span class="text-xs capitalize">Profile</span>
+        </button>
+    </nav>     
+    <!--====================================
+            MOBILE NAV PART END   
+    =====================================-->
+
+    <!--====================================
+           SUBSCRIBE PART START   
+    =====================================-->
+    <div class="bg-primary py-8 ">
+        <div class="container">
+            <div class="lg:max-w-[996px] w-full mx-auto flex md:flex-row flex-col items-center justify-between">
+                <div class="md:mb-0 mb-4 ">
+                    <h1 class="text-3xl md:text-4xl font-bold text-white mb-3">Subscribe to Our Newsletter</h1>
+                    <p class="text-sm md:text-base font-medium text-white">Subscribe to our newsletter & get notification about discounts.</p>
+                </div>
+                <form class="flex items-center rounded-xl sm:max-w-96 w-full h-12 p-1 bg-white">
+                    <input type="email" placeholder="Your email address" class="appearance-none outline-none focus:outline-none w-full h-full pl-2">
+                    <button type="submit" class="capitalize text-xs font-medium rounded-lg flex-shrink-0 p-2.5 h-full bg-primary text-white">Subscribe</button>
+                </form>
+            </div> 
+        </div>
+    </div>
+    <!--====================================
+           SUBSCRIBE PART END   
+    =====================================-->
+
+    <!--====================================
+            FOOTER PART START   
+    =====================================-->
+    <footer class="container">
+        <div class="mt-12 mb-14 lg:mb-0 pb-8 lg:pb-0">
+            <div class="grid-cols-auto md:hidden block mb-8">
+                <a href="#"><img class="mb-4 w-36" src="../../images/header/logo.png" alt="logo"></a>
+                <p class="text-sm mb-3">Discover the latest trends and enjoy seamless shopping with our exclusive collections.</p>
+                <p class="text-sm mb-3 flex items-center gap-2"><i class="lab-line-map-point text-xl"></i> House:25, Road:05, Block:A, Mirpur-2, Dhaka.</p>
+                <p class="text-sm mb-3 flex items-center gap-2"><i class="lab-line-letter text-xl"></i>Email: ebazaar@gmail.com</p>
+                <p class="text-sm mb-3 flex items-center gap-2"><i class="lab-line-call-calling text-xl"></i> Contact: 01256398745</p>
+            </div>
+            <div class="grid grid-cols-1 small:grid-cols-2 md:grid-cols-5 gap-8 md:gap-6">
+                <div class="grid-cols-auto hidden md:block">
+                    <a href="#"><img class="mb-4 w-36" src="../../images/header/logo.png" alt="logo"></a>
+                    <p class="text-sm mb-3">Discover the latest trends and enjoy seamless shopping with our exclusive collections.</p>
+                    <p class="text-sm mb-3 flex items-center gap-2"><i class="lab-line-map-point text-xl"></i> House:25, Road:05, Block:A, Mirpur-2, Dhaka.</p>
+                    <p class="text-sm mb-3 flex items-center gap-2"><i class="lab-line-letter text-xl"></i>Email: ebazaar@gmail.com</p>
+                    <p class="text-sm mb-3 flex items-center gap-2"><i class="lab-line-call-calling text-xl"></i> Contact: 01256398745</p>
+                </div>
+                    <div>
+                        <div class="sm:w-fit md:ms-auto">
+                            <h3 class="capitalize text-lg font-semibold mb-4 ">My Account</h3>
+                            <nav class="flex flex-col items-start gap-3">
+                                <a href="#" class="hover:underline">Profile</a>
+                                <a href="#" class=" hover:underline">Order History</a>
+                                <a href="#" class="hover:underline">My Wishlist</a>
+                                <a href="#" class="hover:underline">My Reviews</a>
+                                <a href="#" class=" hover:underline">Help & Support</a>
+                            </nav>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="sm:w-fit md:ms-auto">
+                            <h3 class="capitalize text-lg font-semibold mb-4">Legal</h3>
+                            <nav class="flex flex-col items-start gap-3">
+                                <a href="#" class="capitalize  hover:underline">Cookie setting</a>
+                                <a href="#" class="capitalize  hover:underline">Terms & conditions</a>
+                                <a href="#" class="capitalize hover:underline">Privacy policy</a>
+                                <a href="#" class="capitalize hover:underline">Return Policy</a>
+                                <a href="#" class="capitalize  hover:underline">Seller Policy</a>
+                                <a href="#" class="capitalize  hover:underline">FAQ</a>
+                            </nav>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="sm:w-fit md:ms-auto">
+                            <h3 class="capitalize text-lg font-semibold mb-4 ">Useful Links</h3>
+                            <nav class="flex flex-col items-start gap-3">
+                                <a href="#" class="capitalize  hover:underline">Become a Seller</a>
+                                <a href="#" class="capitalize  hover:underline">Login to Seller Panel</a>
+                                <a href="#" class="capitalize hover:underline">Become a Delivery Boy</a>
+                                <a href="#" class="capitalize hover:underline">Login to Delivery Boy</a>
+                            </nav>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="sm:w-fit md:ms-auto">
+                            <h3 class="capitalize text-lg font-semibold mb-4 ">Follow Us</h3>
+                            <div class="flex items-center gap-4 mb-8">
+                                <a href="#" class="lab-fill-facebook-round text-2xl text-primary"></a>
+                                <a href="#" class="lab-fill-instagram text-2xl text-primary"></a>
+                                <a href="#" class="lab-fill-x-icon text-2xl text-primary"></a>
+                                <a href="#" class="lab-fill-youtube text-2xl text-primary"></a>
+                            </div>
+                            <h3 class="capitalize text-lg font-semibold mb-3">Download App</h3>
+                            <nav class="flex flex-col items-center gap-3 mb-7 w-full max-w-[130px]">
+                                <a href="#"><img class="rounded-lg w-full" src="../../images/footer/play-store.png" alt="app"></a>
+                                <a href="#"><img class="rounded-lg w-full" src="../../images/footer/apple-store.png" alt="app"></a>
+                            </nav>
+                        </div>
+                    </div>
+            </div>
+            <div class="py-4 md:mt-12 border-t border-primary-slate">
+                <p class="text-sm text-left">&copy; ShopDaddy by <a target="_blank" href="https://inilabs.net/">iNiLabs</a> 2024, All Rights Reserved</p>
+            </div>
+        </div>
+      </footer>      
+    <!--====================================
+            FOOTER PART START   
+    =====================================-->
+        
+</body>
+</html>

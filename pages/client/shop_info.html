@@ -1,0 +1,951 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../fonts/iconly/iconly.css">
+    <link rel="stylesheet" href="../../fonts/typography/satoshi/Satoshi.css">
+    <link rel="stylesheet" href="../../lib/phone-number/intlTelInput.css">
+    <link rel="stylesheet" href="../../css/style.css">
+
+    <script src="../../lib/phone-number/intlTelInput.js"></script>
+    <script defer src="../../js/script.js"></script>
+
+    <title>Shop Information</title>
+</head>
+<body>
+
+   
+    <!--====================================
+                HEADER PART START  
+    =====================================-->
+    <header class="header pt-3 bg-white transition-all duration-300 ease-in-out">
+        <div class="container pb-4 lg:pb-0">
+            <!-- Top Navigation Bar -->
+             <div class="flex justify-between items-center text-sm font-normal mb-6 md:mb-8">
+                <nav class="text-sm font-normal">
+                    <ul class="flex gap-8">
+                        <li class="hidden lg:block"><a href="#">Contact Us</a></li>
+                        <li class="hidden lg:block"><a href="#">About Us</a></li>
+                        <li class="hidden lg:block"><a href="#">FAQ</a></li>
+                        <li><a href="#" class="flex items-center"><i class="lab-line-call-calling text-base mr-2"></i>+98563214589</a></li>
+                    </ul>  
+                </nav>
+                <div class="flex ">
+                    <div class="relative dropdown-group">
+                        <button class="dropdown-btn flex items-center justify-center  gap-2 rounded-xl ">
+                            <i class="lab-line-currencies text-base"></i>
+                            <span id="current-currency" class="whitespace-nowrap">USD</span>
+                            <i class="dropdown-icon lab-line-chevron-down text-xs "></i>
+                        </button>
+                        <ul class="dropdown-list text-left w-full absolute top-6 right-0 z-[30] text-sm font-normal bg-white shadow-header p-4 rounded-xl">
+                            <li class="pb-3 hover:text-primary"><a href="">USD</a></li>
+                            <li class="pb-3 hover:text-primary"><a href="">BDT</a></li>
+                            <li class="pb-3 hover:text-primary"><a href="">SAR</a></li>
+                            <li class="pb-3 hover:text-primary"><a href="">DEM</a></li>
+                            <li class="hover:text-primary"><a href="">TRY</a></li>
+                        </ul>
+                    </div>
+                    <div class="relative ps-8 dropdown-group">
+                        <button class="dropdown-btn flex items-center justify-center gap-2 rounded-xl transition h-6" >
+                            <img id="current-flag" src="../../images/flag/united-states.png" alt="Current Flag"  class="w-4 h-4 rounded-full"> 
+                            <span id="current-lang" class="whitespace-nowrap">English</span>
+                            <i class="dropdown-icon lab-line-chevron-down text-xs"></i>
+                        </button>
+                        <ul class="dropdown-list max-w-28 w-full text-sm absolute top-6 right-0 z-[30] font-normal bg-white shadow-header p-4 rounded-xl hidden">
+                            <li class="pb-3 hover:text-primary"><a href="" class="flex items-center gap-2"><img src="../../images/flag/united-states.png" class="w-4 h-4 rounded-full" alt="US">English</a></li>
+                            <li class="pb-3 hover:text-primary"><a href="" class="flex items-center gap-2"><img src="../../images/flag/bangladesh.png" class="w-4 h-4 rounded-full" alt="US">Bangla</a></li>
+                            <li class="pb-3 hover:text-primary"><a href="" class="flex items-center gap-2"><img src="../../images/flag/china.png" class="w-4 h-4 rounded-full" alt="US">China</a></li>
+                            <li class="pb-3 hover:text-primary"><a href="" class="flex items-center gap-2"><img src="../../images/flag/germany.png" class="w-4 h-4 rounded-full" alt="US">German</a></li>
+                            <li class="hover:text-primary"><a href="" class="flex items-center gap-2"><img src="../../images/flag/saudi-arabia.png" class="w-4 h-4 rounded-full" alt="US">Arabia</a></li>
+                        </ul>
+                    </div>
+                </div>
+             </div>
+             <div class="flex items-center hidden">  
+                <button class="search-hide lab-line-long-arrow-left text-2xl mr-2"></button>
+                <div class="dropdown-group relative w-full h-11 border border-light-white focus-within:border-primary rounded-xl lg:flex items-center ps-3 p-[3px] flex transition-all duration-300">
+                    <button class="dropdown-btn text-left flex items-center gap-2 text-sm font-medium whitespace-nowrap pr-2">All Categories <i class="dropdown-icon lab-fill-arrow-down text-xl" ></i></button>
+                    <ul class="dropdown-list text-left absolute top-11 left-0 z-10 text-sm font-normal bg-white shadow-header p-4 rounded-xl">
+                        <li class="pb-2"><a href="">All Categories </a></li>
+                        <li class="py-2"><a href="">Computer & Accessories</a></li>
+                        <li class="py-2"><a href="">Smartphone & Gadgets</a></li>
+                        <li class="py-2"><a href="">Electronics</a></li>
+                        <li class="py-2"><a href="">Beauty & Personal Care</a></li>
+                        <li class="py-2"><a href="">Sports & Entertainment</a></li>
+                        <li class="py-2"><a href="">Home & Living</a></li>
+                        <li class="py-2"><a href="">Jewelry & Watches</a></li>
+                        <li class="pt-2"><a href="">Kids & Toy</a></li>
+                    </ul>
+                    <form action="#" class="w-full flex h-full">
+                        <input class="appearance-none font-normal text-sm text-[#6E7191] border-l pl-4 w-full h-full focus:outline-none" type="text" placeholder="Search for product">
+                        <button class="ml-auto p-2 py-1 bg-primary rounded-lg cursor-pointer flex justify-center items-center">
+                            <i class="lab-line-magnifer text-xl text-white" ></i>
+                        </button>
+                    </form>
+                </div>
+            </div>
+            <!-- Search and User Info -->
+            <div class="flex items-center justify-between lg:justify-normal gap-x-[68px] lg:pb-4 lg:border-b ">
+               <button data-drawer="#sidebar" class=" block lg:hidden">
+                    <i class="lab-line-dashboard text-2xl "></i>
+               </button> 
+                <a href="./home.html" class="max-w-36 flex-shrink-0">
+                    <img src="../../images/header/logo.png" alt="Logo" class="w-full">
+                </a>
+                <div class="dropdown-group max-w-[550px] relative w-full h-11 border border-light-white focus-within:border-primary rounded-xl lg:flex items-center ps-3 p-[3px]  hidden transition-all duration-300">
+                    <button class="dropdown-btn text-left flex items-center gap-2 text-sm font-medium whitespace-nowrap pr-2">All Categories <i class="dropdown-icon lab-fill-arrow-down text-xl" ></i></button>
+                        <ul class="dropdown-list text-left w-fit absolute top-11 left-0  z-[30] text-sm font-normal bg-white shadow-header p-4 rounded-xl hidden">
+                            <li class="pb-2 hover:text-primary active:text-primary"><a href="">Computer & Accessories</a></li>
+                            <li class="py-2 hover:text-primary active:text-primary"><a href="">Smartphone & Gadgets</a></li>
+                            <li class="py-2 hover:text-primary active:text-primary"><a href="">Electronics</a></li>
+                            <li class="py-2 hover:text-primary active:text-primary"><a href="">Beauty & Personal Care</a></li>
+                            <li class="py-2 hover:text-primary active:text-primary"><a href="">Sports & Entertainment</a></li>
+                            <li class="py-2 hover:text-primary active:text-primary"><a href="">Home & Living</a></li>
+                            <li class="py-2 hover:text-primary active:text-primary"><a href="">Jewelry & Watches</a></li>
+                            <li class="pt-2 hover:text-primary active:text-primary"><a href="">Kids & Toy</a></li>
+                        </ul>
+                    <form action="#" class="w-full flex h-full">
+                        <input class="appearance-none font-normal text-sm text-[#6E7191] border-l pl-4 w-full h-full focus:outline-none" type="text" placeholder="Search for product">
+                        <button class="ml-auto p-2 py-1 bg-primary rounded-lg cursor-pointer flex justify-center items-center">
+                            <i class="lab-line-magnifer text-xl text-white" ></i>
+                        </button>
+                    </form>
+                </div>
+                <button class="search-open block lg:hidden">
+                    <i class="lab-line-magnifer text-2xl "></i>
+                </button>
+                <div class="hidden lg:flex gap-6 items-center">
+                    <div class="relative dropdown-group">
+                        <button class="dropdown-btn flex flex-shrink gap-x-2 items-center group">
+                            <i class="lab-line-administrator border rounded-full w-11 h-11 flex items-center justify-center text-xl group-hover:bg-primary-light transition-all duration-300"></i>
+                            <span>
+                                <small class="text-xs font-normal">Login/Signup</small>
+                                <p class="text-sm font-medium whitespace-nowrap">My Account</p>
+                            </span>
+                        </button>
+                        <ul class="dropdown-list text-left min-w-48 w-full absolute top-11 right-0 text-sm font-normal bg-white shadow-header p-4 rounded-xl hidden">
+                            <li class="pb-3 text-sm font-medium group"><a href="./dashboard.html" class="flex items-center gap-2 group-hover:text-primary" ><i class="lab-dashboard text-base text-[#A0A3BD] group-hover:text-primary "></i> Dashboard</a></li>
+                            <li class="pb-3 text-sm font-medium group"><a href="./order-history.html" class="flex items-center gap-2 group-hover:text-primary" ><i class="lab-fill-bag text-base text-[#A0A3BD] group-hover:text-primary "></i> Order History</a></li>
+                            <li class="pb-3 text-sm font-medium group"><a href="./return_orders.html" class="flex items-center gap-2 group-hover:text-primary" > <i class="lab-fill-refresh text-base text-[#A0A3BD] group-hover:text-primary "></i>Return Orders</a></li>
+                            <li class="pb-3 text-sm font-medium group"><a href="./my-review.html" class="flex items-center gap-2 group-hover:text-primary" ><i class="lab-fill-my-reviews text-base text-[#A0A3BD] group-hover:text-primary "></i> My Reviews</a></li>
+                            <li class="pb-3 text-sm font-medium group"><a href="./account_edit_info.html" class="flex items-center gap-2 group-hover:text-primary" ><i class="lab-fill-account-info text-base text-[#A0A3BD] group-hover:text-primary "></i> Account Info</a></li>
+                            <li class="pb-3 text-sm font-medium group"><a href="./customer_address.html" class="flex items-center gap-2 group-hover:text-primary" ><i class="lab-fill-map text-base text-[#A0A3BD] group-hover:text-primary "></i>Addresses</a></li>
+                            <li class="pb-3 text-sm font-medium group"><a href="./chat.html" class="flex items-center gap-2 group-hover:text-primary" ><i class="lab-fill-message text-base text-[#A0A3BD] group-hover:text-primary "></i>Message with Us</a></li>
+                            <li class="text-sm font-medium group"><a href="./login.html" class="flex items-center gap-2 group-hover:text-primary" ><i class="lab-fill-logout text-base text-[#A0A3BD] group-hover:text-primary "></i>Logout</a></li>
+                        </ul>
+                    </div>
+                    <div class="flex gap-4">
+                        <div class="relative dropdown-group">
+                            <button class="dropdown-btn border rounded-full w-11 h-11 flex items-center justify-center relative hover:bg-primary-light transition-all duration-300">
+                                <i class="lab-line-notification-alert text-xl"></i>
+                                <div class="absolute top-2 right-1 rounded-full bg-primary w-2.5 h-2.5"></div>
+                            </button>
+                            <div class="dropdown-list text-left z-[30] absolute top-12 right-0 text-sm font-normal bg-white shadow-header min-w-80 w-full rounded-xl hidden max-h-[450px] h-auto overflow-y-scroll thin-scrolling">
+                               <div class="p-4 border-b border-light-white">
+                                  <h6 class="text-left text-sm font-bold">All Notifications</h6>
+                               </div>
+                               <div class="px-4">
+                                    <div class="py-3 border-b border-light-white">
+                                        <p class="mb-2 text-sm font-normal">Order No: <span class="font-medium">20221221</span> & Shop: Underground Fashion has been <span class="text-negative-red font-medium">Delivered</span></p>
+                                        <small class="text-light-dark">13 Nov, 2024</small>
+                                    </div>
+                                    <div class="py-3 border-b border-light-white">
+                                        <p class="mb-2 text-sm font-normal">Order No: <span class="font-medium">20221221</span> & Shop: Underground Fashion has been <span class="text-negative-red font-medium">Delivered</span></p>
+                                        <small class="text-light-dark">13 Nov, 2024</small>
+                                    </div>
+                                    <div class="py-3 border-b border-light-white">
+                                        <p class="mb-2 text-sm font-normal">Order No: <span class="font-medium">20221221</span> & Shop: Underground Fashion has been <span class="text-negative-red font-medium">Delivered</span></p>
+                                        <small class="text-light-dark">13 Nov, 2024</small>
+                                    </div>
+                               </div>
+                            </div>
+                        </div>
+                        <a href="./compare.html" class="border rounded-full w-11 h-11 flex items-center justify-center relative hover:bg-primary-light transition-all duration-300">
+                            <i class="lab-fill-horizontal text-xl"></i>
+                            <span class="absolute top-2 right-1 rounded-full bg-primary w-2.5 h-2.5"></span>
+                        </a>
+                        <button class="border rounded-full w-11 h-11 flex items-center justify-center relative hover:bg-primary-light transition-all duration-300">
+                            <i class="lab-line-heart-round text-xl"></i>
+                            <span class="absolute top-2 right-1 rounded-full bg-primary w-2.5 h-2.5"></span>
+                        </button>
+                        <div class="relative dropdown-group">
+                            <button class="dropdown-btn flex items-center justify-center relative gap-x-2 border rounded-full w-11 h-11 hover:bg-primary-light transition-all duration-300">
+                                <i class="lab-line-cart text-xl"></i>
+                                <span class="absolute top-2 right-1 rounded-full bg-primary w-2.5 h-2.5"></span>
+                            </button>
+                            <div class="dropdown-list text-left absolute top-12 right-0 text-sm font-normal bg-white shadow-header min-w-80 w-full p-4 rounded-xl hidden">
+                                <div class="flex gap-x-2 pb-3">
+                                    <div class="w-20 h-20 rounded-2xl">
+                                        <img src="../../images/cart/prdt1.png" class="w-full h-full" alt="product1">
+                                    </div>
+                                    <div class="text-ellipsis">
+                                        <h4 class="whitespace-nowrap text-sm font-medium mb-2">New collection Stylish Comb</h4>
+                                        <p class="text-sm font-normal"> <span class="text-[#6E7191]">color</span>: Green</p>
+                                        <p class="text-sm font-normal"> <span class="text-[#6E7191]">Region</span>: US</p>
+                                        <p class="text-sm font-normal"> <span class="text-[#6E7191]">Storage</span>: 128GB</p>
+                                        <div class="flex justify-between items-center mt-2">
+                                            <p class="text-sm font-medium text-primary">$899.99</p>
+                                            <div class="max-w-[70px] w-full h-full bg-light rounded-[20px] flex justify-around">
+                                                <button ><i class="lab-fill-delete text-red-600 text-base"></i></button>
+                                                <input type="text" class="text-center outline-none w-5 bg-transparent" value="3"></input>
+                                                <button ><i class="lab-fill-circle-plus text-base text-primary"></i></button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <hr class="mb-3 h-[1px] bg-[#EFF0F6]">
+                                <div class="flex gap-x-2 pb-3">
+                                    <div class="w-20 h-20 rounded-2xl">
+                                        <img src="../../images/cart/prdt2.png" class="w-full h-full" alt="product2">
+                                    </div>
+                                    <div class="overflow-hidden text-ellipsis">
+                                        <h4 class="whitespace-nowrap text-sm font-medium mb-2">New collection Stylish Comb</h4>
+                                        <p class="text-sm font-normal"> <span class="text-[#6E7191]">color</span>: Green</p>
+                                        <p class="text-sm font-normal"> <span class="text-[#6E7191]">Region</span>: US</p>
+                                        <p class="text-sm font-normal"> <span class="text-[#6E7191]">Storage</span>: 128GB</p>
+                                        <div class="flex justify-between items-center mt-2">
+                                            <p class="text-sm font-medium text-primary">$899.99</p>
+                                            <div class="max-w-[70px] w-full h-full bg-light rounded-[20px] flex justify-around">
+                                                <button ><i class="lab-fill-circle-minus text-base"></i></button>
+                                                <input type="text" class="text-center outline-none w-5 bg-transparent" value="3"></input>
+                                                <button ><i class="lab-fill-circle-plus text-base text-primary"></i></button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="flex justify-between border-t border-dashed border-t-[#EFF0F6] pt-3">
+                                    <span class="text-base font-medium">Subtotal</span>
+                                    <span class="text-base font-bold text-primary">$1799.98</span>
+                                </div>
+                                <div class="flex justify-between mt-4">
+                                     <a href="./cart.html" class="py-[6px] px-3 border border-primary rounded-lg text-primary whitespace-nowrap hover:bg-primary hover:text-white transition-all duration-300 ">View Cart</a>
+                                     <a href="./shipping-information.html" class="py-[6px] px-3 bg-primary rounded-lg text-white">Checkout</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Main Navigation Bar -->
+            <div class="lg:flex justify-between items-center text-base font-medium py-2 hidden">
+                <div class="flex gap-8">
+                    <div class="relative menudropdown-group">
+                        <button class="menudropdown-btn bg-primary rounded-lg py-[10px] px-3 flex gap-x-8 items-center text-base font-bold text-white"><span><i class="lab-fill-dashboard text-white mr-2"></i> Browse Categories</span><i  class="menudropdown-icon lab-fill-arrow-down flex-1"></i>
+                        </button>
+                        <ul class="menudropdown-list text-left whitespace-nowrap min-w-60 w-full absolute top-11 left-0 text-sm font-normal bg-white shadow-header p-4 rounded-xl hidden">
+                            <li class="relative"><a href="" class=" pb-3 text-left w-full flex items-center border-b border-b-[#EFF0F6]"><i class="lab-fill-t-shirt text-[#6E7191] text-base mr-2"></i> <span class="flex-1">Clothing & Fashion  </span><i class="lab-line-chevron-right"></i></a></li>
+                            <li class="relative menudropdown-group">
+                                <button class="menudropdown-btn py-3 text-left w-full flex items-center border-b border-b-[#EFF0F6]"><i class="lab-fill-display text-[#6E7191] text-base mr-2"></i> <span class="flex-1">Computer & Accessories</span><i class="lab-line-chevron-right"></i></button>
+                                <ul class="menudropdown-list absolute min-w-60 w-full left-56 top-0 bg-white shadow-header p-4 rounded-xl">
+                                    <li class=""><a href="" class="pb-3 text-left w-full flex items-center border-b border-b-[#EFF0F6]"><span class=" flex-1">Desktop & Components </span><i class="lab-line-chevron-right"></i></a></li>
+                                    <li class=" relative menudropdown-group">
+                                        <button class="menudropdown-btn py-3 text-left w-full flex items-center border-b border-b-[#EFF0F6]"><span class=" flex-1">Laptop & Components</span><i class="lab-line-chevron-right"></i></button>
+                                        <ul class="menudropdown-list absolute min-w-60 h-auto w-full left-56 top-0 bg-white shadow-header p-4 rounded-xl ">
+                                            <li class=""><a href="" class="pb-3 text-left h-full w-full flex items-center border-b border-b-[#EFF0F6]"><span class="flex-1">All Laptop</span></a></li>
+                                            <li class=""><a href="" class="py-3 text-left w-full flex items-center border-b border-b-[#EFF0F6]"><span class=" flex-1">Gaming Laptop</span></a></li>
+                                            <li class=""><a href="" class="py-3 text-left w-full flex items-center border-b border-b-[#EFF0F6]"><span class=" flex-1">Laptop Bag</span></a></li>
+                                            <li class=""><a href="" class="py-3 text-left w-full flex items-center border-b border-b-[#EFF0F6]"><span class=" flex-1">Laptop RAM</span></a></li>
+                                            <li class="relative menudropdown-group">
+                                                <button  class="menudropdown-btn pt-3 text-left w-full flex items-center"><span class=" flex-1">Laptop Accessories</span><i class="lab-line-chevron-right"></i></button>
+                                                <ul class="menudropdown-list absolute min-w-60 w-full left-56 top-0 bg-white shadow-header p-4 rounded-xl">
+                                                    <li class="pb-3 w-full text-left border-b border-b-[#EFF0F6]"><a href="" >Laptop Cooler</a></li>
+                                                    <li class="py-3 w-full text-left border-b border-b-[#EFF0F6]"><a href="" >Laptop Charger/Adapter</a></li>
+                                                    <li class="py-3 w-full text-left border-b border-b-[#EFF0F6]"><a href="" >Laptop Stand</a></li>
+                                                    <li class="py-3 w-full text-left border-b border-b-[#EFF0F6]"><a href="" >Laptop Battery</a></li>
+                                                    <li class="pt-3 w-full text-left "><a href="" >Laptop Display</a></li>
+                                                </ul>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                    <li class=""><a href="" class="py-3 text-left w-full flex items-center border-b border-b-[#EFF0F6]"><span class=" flex-1">Gaming</span><i class="lab-line-chevron-right"></i></a></li>
+                                    <li class=""><a href="" class="py-3 text-left w-full flex items-center border-b border-b-[#EFF0F6]"><span class=" flex-1">Accessories</span><i class="lab-line-chevron-right"></i></a></li>
+                                    <li class=""><a href="" class="py-3 text-left w-full flex items-center border-b border-b-[#EFF0F6]"><span class=" flex-1">Official Equipment</span><i class="lab-line-chevron-right"></i></a></li>
+                                    <li class=""><a href="" class="py-3 text-left w-full flex items-center border-b border-b-[#EFF0F6]"><span class=" flex-1">Network & Router</span><i class="lab-line-chevron-right"></i></a></li>
+                                    <li class=""><a href="" class="pt-3 text-left w-full flex items-center"><span class=" flex-1">Monitors & Displays</span><i class="lab-line-chevron-right"></i></a></li>
+                                </ul>
+                            </li>
+                            <li class=""><a href="" class="text-left w-full flex items-center border-b border-b-[#EFF0F6] py-3"><i class="lab-fill-smartphone-rotate-orientation text-[#6E7191] text-base mr-2"></i> <span class="flex-1">Smartphone & Gadgets</span><i class="lab-line-chevron-right"></i></a></li>
+                            <li class=""><a href="" class="text-left w-full flex items-center border-b border-b-[#EFF0F6] py-3"><i class="lab-fill-tv text-[#6E7191] text-base mr-2"></i> <span class="flex-1">Electronics</span><i class="lab-line-chevron-right"></i></a></li>
+                            <li class=""><a href="" class="text-left w-full flex items-center border-b border-b-[#EFF0F6] py-3"><i class="lab-fill-cosmetic text-[#6E7191] text-base mr-2"></i> <span class="flex-1">Beauty & Personal Care</span><i class="lab-line-chevron-right"></i></a></li>
+                            <li class=""><a href="" class="text-left w-full flex items-center border-b border-b-[#EFF0F6] py-3"><i class="lab-fill-balls text-[#6E7191] text-base mr-2"></i> <span class="flex-1">Sports & Entertainment</span><i class="lab-line-chevron-right"></i></a></li>
+                            <li class=""><a href="" class="text-left w-full flex items-center border-b border-b-[#EFF0F6] py-3"><i class="lab-fill-armchair text-[#6E7191] text-base mr-2"></i> <span class="flex-1">Home & Living</span><i class="lab-line-chevron-right"></i></a></li>
+                            <li class=""><a href="" class="text-left w-full flex items-center border-b border-b-[#EFF0F6] py-3"><i class="lab-fill-medal-star text-[#6E7191] text-base mr-2"></i> <span class="flex-1">Jewelry & Watches</span><i class="lab-line-chevron-right"></i></a></li>
+                            <li class=""><a href="" class="text-left w-full flex items-center pt-3"><i class="lab-fill-body text-[#6E7191] text-base mr-2 "></i> <span class="flex-1">Kids & Toy</span><i class="lab-line-chevron-right"></i></a></li>
+                        </ul>
+                    </div>
+                    <nav class="flex items-center">
+                        <ul class="flex gap-6">
+                            <li><a href="./home.html" class="hover:text-primary active:text-primary">Home</a></li>
+                            <li><a href="#" class="hover:text-primary active:text-primary">Campaign</a></li>
+                            <li><a href="#today_deals" class="hover:text-primary active:text-primary">Today’s Deals</a></li>
+                            <li><a href="#flash_sale" class="hover:text-primary active:text-primary">Flash Sale</a></li>
+                            <li><a href="./blog.html" class="hover:text-primary active:text-primary">Blog</a></li>
+                        </ul>
+                    </nav>
+                </div>
+                    <a href="./seller_info.html" class="text-base font-bold flex items-center hover:text-primary active:text-primary">
+                        <i class="lab-line-branches text-xl mr-2"></i> Become a Seller
+                    </a>
+            </div>
+        </div>
+    </header> 
+    <!--====================================
+                HEADER PART END   
+    =====================================-->
+
+    <!--====================================
+                SIDEBAR PART START   
+    =====================================-->
+    <aside id="sidebar" class="drawer transition-all duration-500 ease-in-out">
+        <div class="drawer-content w-72 h-full bg-white thin-scrolling">
+                <div class="flex justify-between items-start p-4">
+                    <a href="./index.html" class="w-28"><img src="../../images/header/logo.png" alt="logo" class="w-full"></a> 
+                    <span class="drawer-close cursor-pointer ml-28 text-primary">
+                        <i class="lab-fill-close-circle text-negative-red text-xl"></i>
+                    </span>
+                </div>
+                <div class="flex flex-col gap-4 p-4 border-b">
+                    <div class="menu-link flex flex-shrink gap-x-2 items-center  w-full relative">
+                        <button class="border rounded-full w-11 h-11 flex items-center px-2 justify-center">
+                            <i class="lab-line-administrator text-xl"></i>
+                        </button>
+                        <div>
+                            <small class="text-xs font-normal">Login/Signup</small>
+                            <p class="text-sm font-medium whitespace-nowrap">My Account</p>
+                        </div>
+                    </div>
+                    <div class="menu-link cursor-pointer flex items-center gap-x-2 ">
+                        <button class="border rounded-full w-11 h-11 flex items-center justify-center  px-4 py-2 relative">
+                            <i class="lab-fill-horizontal text-xl"></i>
+                            <div class="absolute top-2 right-1 rounded-full bg-primary w-2.5 h-2.5"></div>
+                        </button>
+                        <p class="text-sm font-medium">Comparison</p>
+                    </div>
+                    <div  data-modal="#notification" class="menu-link flex items-center gap-x-2">
+                        <button class="border rounded-full w-11 h-11 relative ">
+                            <i class="lab-line-notification-alert text-xl"></i>
+                            <span class="absolute top-2 right-1 rounded-full bg-primary w-2.5 h-2.5"></span>
+                        </button>
+                        <p class="text-sm font-medium">Notification</p>
+                    </div>
+                </div>
+                <nav class="p-4 w-full border-b border-light-white">
+                    <ul class="flex flex-col text-lg">
+                        <li class="menu-link w-full py-2 rounded-md hover:text-white"><a href="#">Home</a></li>
+                        <li class="menu-link w-full py-2 rounded-md hover:text-white"><a href="#">Campaign</a></li>
+                        <li class="menu-link w-full py-2 rounded-md hover:text-white"><a href="#">Flash Sale</a></li>
+                        <li class="menu-link w-full py-2 rounded-md hover:text-white"><a href="#">Blog</a></li>
+                        <li class="menu-link w-full py-2 rounded-md hover:text-white"><a href="#" class="text-base font-bold flex items-center"><i class="lab-line-branches text-xl mr-2"></i> Become a Seller</a> </li>
+                    </ul>
+                    <div class="dropdown-group pt-2">
+                        <button class="dropdown-btn flex items-center justify-center gap-2 rounded-xl transition h-6 text-base">
+                            <img id="current-flag" src="../../images/flag/united-states.png" alt="Current Flag"  class="w-5 h-5 rounded-full"> 
+                            <span id="current-lang" class="whitespace-nowrap">English</span>
+                            <i class="dropdown-icon lab-line-chevron-down text-xs"></i>
+                        </button>
+                        <ul class="dropdown-list w-full text-sm font-normal bg-white shadow-header p-4 rounded-xl hidden mt-2">
+                            <li class="pb-3 hover:text-primary"><a href="" class="flex items-center gap-2"><img src="../../images/flag/united-states.png" class="w-4 h-4 rounded-full" alt="US">English</a></li>
+                            <li class="pb-3 hover:text-primary"><a href="" class="flex items-center gap-2"><img src="../../images/flag/bangladesh.png" class="w-4 h-4 rounded-full" alt="US">Bangla</a></li>
+                            <li class="pb-3 hover:text-primary"><a href="" class="flex items-center gap-2"><img src="../../images/flag/china.png" class="w-4 h-4 rounded-full" alt="US">China</a></li>
+                            <li class="pb-3 hover:text-primary"><a href="" class="flex items-center gap-2"><img src="../../images/flag/germany.png" class="w-4 h-4 rounded-full" alt="US">German</a></li>
+                            <li class="hover:text-primary"><a href="" class="flex items-center gap-2"><img src="../../images/flag/saudi-arabia.png" class="w-4 h-4 rounded-full" alt="US">Arabia</a></li>
+                        </ul>
+                    </div>
+                </nav>
+                <div class="px-4 w-full ">
+                    <ul class="flex flex-col text-lg">
+                        <li class="menu-link w-full pt-4 pb-2 rounded-md hover:text-white text-sm font-normal"><a href="#">Contact Us</a></li>
+                        <li class="menu-link w-full py-2 rounded-md hover:text-white text-sm font-normal"><a href="#">About Us</a></li>
+                        <li class="menu-link w-full py-2 rounded-md hover:text-white text-sm font-normal"><a href="#">FAQ</a></li>    
+                    </ul>
+                </div>
+        </div>
+    </aside>
+    <!--====================================
+                SIDEBAR PART END   
+    =====================================-->
+
+    <!--====================================
+            SHOP INFO PART START   
+    =====================================-->
+    <section class="bg-gradient-to-r from-[#ECF5FF] to-[#F3FCE4] py-8 sm:py-12 mb-12 sm:mb-20">
+        <div class="container">
+            <div class="row">
+                <div class="col-12 md:col-5 py-0">
+                    <div class="max-w-96 w-full">
+                        <h1 class="text-3xl sm:text-4xl font-bold text-primary mb-4 sm:mb-6">Become A ShopDaddy Seller Today!</h1>
+                        <p class="text-base font-medium mb-6 sm:mb-8">Create a ShopDaddy seller account now and reach millions of customers!</p>
+                        <img class="md:block hidden" src="../../images/seller/hero.png" alt="">
+                    </div>
+                </div>
+                <div class="col-12 md:col-7">
+                    <div class="bg-white sm:px-6 px-4 py-6 rounded-2xl">
+                        <div class="mx-4">
+                            <div class="max-w-80 w-full mx-auto mb-14">
+                                <div class="flex items-center">
+                                    <div class="flex items-center text-white relative cursor-pointer">
+                                        <a href="./seller_info.html" class="rounded-full transition duration-500 ease-in-out h-9 w-9 py-3 bg-positive flex justify-center items-center">
+                                            <i class="lab-line-info-circle text-base"></i>
+                                        </a>
+                                        <div class="absolute top-0 -ml-10 text-center mt-11 w-32 text-xs font-medium text-positive">Basic Info</div>
+                                    </div>
+                                    <div class="flex-auto border-t-2 transition duration-500 ease-in-out border-positive"></div>
+                                    <div class="flex items-center text-white relative cursor-pointer">
+                                        <a href="./shop_info.html" class="rounded-full transition duration-500 ease-in-out h-9 w-9 py-3 bg-positive flex justify-center items-center">
+                                            <i class="lab-line-branches text-base"></i>
+                                        </a>
+                                        <div class="absolute top-0 -ml-10 text-center mt-11 w-32 text-xs font-medium text-positive">Shop Info </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <form action="">
+                            <h3 class="text-[20px] font-bold text-primary mb-6">Sign Up as a ShopDaddy Seller</h3>  
+                            <div class="border border-light-white rounded-lg p-4 mb-6">
+                                <h5 class="text-xl font-bold mb-4">Seller Information</h5>
+                            <div class="grid grid-cols-12 gap-x-4 gap-y-4">
+                                <div class="col-span-12 sm:col-span-6">
+                                    <label for="name" class="block mb-1 text-sm font-medium required">Seller Name</label>
+                                    <input id="name" type="text" class="outline-none border border-light-white text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full h-12 p-3">
+                                </div>
+                                <div class="col-span-12 sm:col-span-6">
+                                    <label for="email" class="block mb-1 text-sm font-medium required">Seller Photo</label>
+                                    <div class="border border-dashed border-light-white rounded-lg p-3">
+                                        <div class="flex flex-col lg:flex-row gap-3">
+                                             <div>
+                                                <div class="w-24 h-24">
+                                                    <img id="seller_img" class="w-full h-full object-cover rounded-full" src="../../images/seller/default_logo.png" alt="seller_Image" />
+                                                </div>
+                                             </div>
+                                            <div class="flex flex-col justify-center w-full">
+                                                <p class="text-negative-red mb-1 text-xs">Image Ratio- 1:1</p>
+                                                <p class="text-xs font-normal mb-2 text-light-dark">
+                                                    <span class="text-negative-red">*</span>*Make sure your photo format is Png or JPG and max size is 2mb.
+                                                </p>                           
+                                                <label class="w-fit relative cursor-pointer px-4 py-2 rounded-lg bg-primary-light text-primary flex items-center gap-2">
+                                                    <input class="opacity-0 absolute inset-0 -z-[10] cursor-pointer rounded-lg" type="file" accept="image/*" name="image" id="image" onchange="profileimage(event,'seller_img')" />
+                                                    <i class="lab-fill-upload"></i>
+                                                    <span class="text-sm font-bold cursor-pointer">Upload</span>
+                                                </label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            </div>
+                            <div class="border border-light-white rounded-lg p-4 mb-6">
+                                <h5 class="text-xl font-bold mb-4">Shop Information</h5>
+                                <div class="mb-4">
+                                    <label for="name" class="block mb-1 text-sm font-medium required">Shop Name</label>
+                                    <input id="name" type="text" class="outline-none border border-light-white text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full h-12 p-3">
+                                </div>
+                                <div class="mb-4">
+                                    <h5 class="text-base font-bold mb-3">Shop Address:</h5>
+                                    <div class="p-3 bg-light rounded-lg">
+                                        <div class="grid grid-cols-1 sm:grid-cols-3 gap-3 mb-3">
+                                            <div class="relative">
+                                                <label for="state" class="block mb-1 text-sm font-medium required">State</label>
+                                                <select name="state" id="state" class="appearance-none outline-none border border-light-white text-sm  block w-full p-2 rounded-lg h-12 focus:ring-blue-500 focus:border-blue-500">
+                                                      <option value="1">state1</option>
+                                                      <option value="2">state1</option>
+                                                      <option value="3">state1</option>
+                                                      <option value="4">state1</option>
+                                                </select>
+                                                <i class="absolute top-1/3 right-0 p-2.5 h-full lab-fill-arrow-down text-xl" ></i>
+                                            </div>
+                                            <div class="relative">
+                                                <label for="state" class="block mb-1 text-sm font-medium required">City</label>
+                                                <select name="state" id="state" class="appearance-none outline-none border border-light-white text-sm  block w-full p-2 rounded-lg h-12 focus:ring-blue-500 focus:border-blue-500">
+                                                      <option value="1">state1</option>
+                                                      <option value="2">state1</option>
+                                                      <option value="3">state1</option>
+                                                      <option value="4">state1</option>
+                                                </select>
+                                                <i class="absolute top-1/3 right-0 p-2.5 h-full lab-fill-arrow-down text-xl" ></i>
+                                            </div>
+                                            <div>
+                                                <label for="name" class="block mb-1 text-sm font-medium">Zip Code</label>
+                                                <input id="name" type="text" class="outline-none border border-light-white text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full h-12 p-3">
+                                            </div>
+                                        </div>
+                                        <div>
+                                            <label for="name" class="block mb-1 text-sm font-medium required">Street Address</label>
+                                            <input id="name" type="text" class="outline-none border border-light-white text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full h-12 p-3">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="grid grid-cols-1 sm:grid-cols-7 gap-4">
+                                    <div class="col-span-1 sm:col-span-3">
+                                        <label for="email" class="block mb-1 text-sm font-medium required">Shop Logo</label>
+                                        <div class="border border-dashed border-light-white rounded-lg p-3 upload-container">
+                                            <div class="flex flex-col small:flex-row sm:flex-row gap-3 mb-3">
+                                                 <div class="w-fit">
+                                                    <div class="w-24 h-24">
+                                                        <img id="shop_logoimg" class="w-full h-full object-cover rounded-full" src="../../images/seller/default_logo.png" alt="logo Image" />
+                                                    </div>
+                                                 </div>
+                                                <div class="flex flex-col justify-center w-full">
+                                                    <p class="text-negative-red mb-1 text-xs">Image Ratio- 1:1</p>
+                                                    <p class="text-xs font-normal mb-2 text-light-dark">
+                                                        <span class="text-negative-red">*</span> Make sure your photo format is PNG or JPG and max size is 2MB.
+                                                    </p>                           
+                                                </div>
+                                            </div>
+                                            <label class="w-fit relative cursor-pointer px-4 py-2 rounded-lg bg-primary-light text-primary flex items-center gap-2 ">
+                                                <input class="opacity-0 absolute inset-0 -z-[10] cursor-pointer rounded-lg" type="file" accept="image/*" name="image" id="image" onchange="profileimage(event,'shop_logoimg')" />
+                                                <i class="lab-fill-upload"></i>
+                                                <span class="text-sm font-bold cursor-pointer">Upload</span>
+                                            </label>
+                                        </div>
+                                    </div>
+                                    <div class="col-span-1 sm:col-span-4">
+                                        <label for="email" class="block mb-1 text-sm font-medium required">Shop Banner</label>
+                                        <div class="border border-dashed border-light-white rounded-lg p-3">
+                                            <div class="flex flex-col small:flex-row sm:flex-row gap-3 mb-3">
+                                                 <div class="w-fit">
+                                                    <div class="w-48 h-24">
+                                                        <img id="shop_coverimg" class="w-full h-full object-fill rounded-lg" src="../../images/seller/default_cover.png" alt="cover Image" />
+                                                    </div>
+                                                 </div>
+                                                <div class="flex flex-col justify-center w-full">
+                                                    <p class="text-negative-red mb-1 text-xs">Image Ratio- 2:1</p>
+                                                    <p class="text-xs font-normal mb-2 text-light-dark">
+                                                        <span class="text-negative-red">*</span> Make sure your photo format is PNG or JPG and max size is 2MB.
+                                                    </p>                           
+                                                </div>
+                                            </div>
+                                            <label class="w-fit relative cursor-pointer px-4 py-2 rounded-lg bg-primary-light text-primary flex items-center gap-2">
+                                                <input class="opacity-0 absolute inset-0 -z-[10] cursor-pointer rounded-lg" type="file" accept="image/*" name="image" id="image" onchange="profileimage(event,'shop_coverimg')" />
+                                                <i class="lab-fill-upload"></i>
+                                                <span class="text-sm font-bold cursor-pointer">Upload</span>
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="flex items-center gap-3 mb-4">
+                                <input type="checkbox" name="cart" id="billing-address" class="field-checkbox">
+                                <label for="billing-address" class="text-sm font-normal">I agree to the <a href="#" class="text-primary">Terms of Use</a>, <a href="#" class="text-primary">Privacy Policy</a> & <a href="#" class="text-primary">Refund Policy</a></label>
+                            </div>
+                            <div class="flex sm:flex-row flex-col gap-6 items-center">
+                                <div class="flex flex-col small:flex-row sm:flex-row gap-4 sm:justify-start justify-center">
+                                    <button class="px-8 h-12 bg-light rounded-xl font-bold">Back</button>
+                                    <button class="px-8 h-12 bg-primary text-white rounded-xl font-bold">Sign Up as a Seller</button>
+                                </div>
+                                <p class="text-base font-medium text-center">Already have a Shop?<a href="./login.html" class="ml-2 text-primary font-bold">Login</a></p>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!--====================================
+           SHOP INFO PART END   
+    =====================================-->
+
+     <!--====================================
+             WHY SELL PART START   
+    =====================================-->
+    <section class="container">
+        <div class="max-w-md w-full text-center mx-auto mb-8 sm:mb-12">
+            <h2 class="text-3xl sm:text-4xl font-bold text-primary mb-4 sm:mb-6">Why Sell on ShopDaddy?</h2>
+            <p class="text-sm sm:text-base font-medium ">Unlock endless opportunities by reaching millions of customers worldwide.</p>
+        </div>
+        <div class="grid grid-cols-1 small:grid-cols-2 sm:grid-cols-2 md:grid-cols-3 gap-x-6 gap-y-8 mb-12 sm:mb-20">
+            <div class="flex items-start gap-4">
+                <div>
+                    <div class="w-12 h-12 rounded-full bg-light flex items-center justify-center">
+                        <img src="../../images/seller/Rocket.png" alt="">
+                    </div>
+                </div>
+                <div>
+                    <h4 class="text-xl font-bold mb-2">Reaching Customers</h4>
+                    <p class="text-sm font-normal">Millions of customers on ShopDaddy, World's most visited shopping destination.</p>
+                </div>
+            </div>
+            <div class="flex items-start gap-4">
+                <div>
+                    <div class="w-12 h-12 rounded-full bg-light flex items-center justify-center">
+                        <img src="../../images/seller/Customer Service.png" alt="">
+                    </div>
+                </div>
+                <div>
+                    <h4 class="text-xl font-bold mb-2">24/7 Support</h4>
+                    <p class="text-sm font-normal">Receive 24/7 support from our dedicated team, ready to assist you and resolve any issues anytime.</p>
+                </div>
+            </div>
+            <div class="flex items-start gap-4">
+                <div>
+                    <div class="w-12 h-12 rounded-full bg-light flex items-center justify-center">
+                        <img src="../../images/seller/pick up truck.png" alt="">
+                    </div>
+                </div>
+                <div>
+                    <h4 class="text-xl font-bold mb-2">Reliable Shipping</h4>
+                    <p class="text-sm font-normal">Enjoy fast, reliable, and hassle-free delivery with the ShopDaddy logistics network.</p>
+                </div>
+            </div>
+            <div class="flex items-start gap-4">
+                <div>
+                    <div class="w-12 h-12 rounded-full bg-light flex items-center justify-center">
+                        <img src="../../images/seller/seo.png" alt="">
+                    </div>
+                </div>
+                <div>
+                    <h4 class="text-xl font-bold mb-2">SEO Friendly</h4>
+                    <p class="text-sm font-normal">Boost your search visibility with our SEO-friendly platform, driving increased traffic to your listings.</p>
+                </div>
+            </div>
+            <div class="flex items-start gap-4">
+                <div>
+                    <div class="w-12 h-12 rounded-full bg-light flex items-center justify-center">
+                        <img src="../../images/seller/payment receipt.png" alt="">
+                    </div>
+                </div>
+                <div>
+                    <h4 class="text-xl font-bold mb-2">Timely Payments</h4>
+                    <p class="text-sm font-normal">Your funds are securely deposited directly into your bank account every week.</p>
+                </div>
+            </div>
+            <div class="flex items-start gap-4">
+                <div>
+                    <div class="w-12 h-12 rounded-full bg-light flex items-center justify-center">
+                        <img src="../../images/seller/Marketing Billboard.png" alt="">
+                    </div>
+                </div>
+                <div>
+                    <h4 class="text-xl font-bold mb-2">Free Promotions</h4>
+                    <p class="text-sm font-normal">Take advantage of our comprehensive, free marketing efforts to enhance your sales.</p>
+                </div>
+            </div>
+        </div>
+        <div class="max-w-[591px] w-full text-center mx-auto mb-8 sm:mb-12">
+            <h2 class="text-3xl sm:text-4xl font-bold text-primary mb-4 sm:mb-6">4 Simple Steps to Start Selling</h2>
+            <p class="text-sm sm:text-base font-medium ">Start selling in no time! Register, upload detailed product information and images, and connect with millions of buyers instantly.</p>
+        </div>
+        <div class="mt-2 md:mt-0 py-12 pb-6 sm:py-16 md:py-0 lg:pb-24 relative sm:overflow-hidden">
+            <div class="px-4 mx-auto max-w-7xl sm:px-6 lg:px-8">               
+                <div class="mt-12 lg:mt-20">
+                    <div class="hidden xl:px-44 top-2 md:block md:px-20 lg:px-28">
+                        <svg class="lg:block hidden w-[-webkit-fill-available]" xmlns="http://www.w3.org/2000/svg" width="899" height="157" viewBox="0 0 899 157" fill="none">
+                            <path d="M1 0.500182C1 0.500182 175.589 154.52 301 156C429.153 157.513 466.341 1.41312 594.5 0.500182C724.381 -0.425023 898 156 898 156" stroke="#B6C3FF" stroke-dasharray="6 6"/>
+                        </svg>
+                    </div>
+                    <div class="md:hidden flex justify-center">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="158" height="899" viewBox="0 0 158 899" fill="none">
+                            <path d="M1.00409 898C1.00409 898 155.024 723.411 156.504 598C158.017 469.847 1.91702 432.659 1.00409 304.5C0.0788829 174.619 156.504 1 156.504 1" stroke="#B6C3FF" stroke-dasharray="6 6"/>
+                        </svg>
+                    </div> 
+                    <div class="mb-20  hidden md:grid grid-cols-1 sm:grid-cols-2 text-center gap-y-8 sm:gap-y-10 md:gap-y-12 lg:grid-cols-3 gap-x-12">
+                        <div class="lg:absolute top-0 left-0 flex items-center justify-center w-60 h-60 mx-auto bg-white rounded-full shadow-header">
+                            <div class="flex flex-col items-center p-7 pt-6">
+                                <div class="mb-6">
+                                    <img src="../../images/seller/Check Order.png" alt="">
+                                </div>
+                                <h4 class="text-xl font-bold mb-3">Get Registered</h4>
+                                <p class="max-w-44 w-full text-sm font-normal">Create your account through our website or mobile app with  your phone number, email and shop info.</p>
+                            </div>
+                        </div>
+                        <div class="lg:absolute top-1/3 left-1/4  flex items-center justify-center w-60 h-60 mx-auto bg-white rounded-full shadow-header">
+                            <div class="flex flex-col items-center p-7 pt-6">
+                                <div class="mb-6">
+                                    <img src="../../images/seller/Cheque.png" alt="">
+                                </div>
+                                <h4 class="text-xl font-bold mb-3">Add ID & Bank Info</h4>
+                                <p class="max-w-44 w-full text-sm font-normal ">Add in your ID & Business related details. Include necessary bank information for payments.</p>
+                            </div>
+                        </div>
+                        <div class="lg:absolute top-0 right-[28%]  flex items-center justify-center w-60 h-60 mx-auto bg-white rounded-full shadow-header">
+                            <div class="flex flex-col items-center p-7 pt-6">
+                                <div class="mb-6">
+                                    <img src="../../images/seller/Product Management.png" alt="">
+                                </div>
+                                <h4 class="text-xl font-bold mb-3">List Your Products</h4>
+                                <p class="max-w-44 w-full text-sm font-normal">List your products with detailed descriptions and high-quality images to attract more buyers effortlessly.</p>
+                            </div>
+                        </div>
+                        <div class="lg:absolute right-0 top-1/3 flex items-center justify-center w-60 h-60 mx-auto bg-white rounded-full shadow-header">
+                            <div class="flex flex-col items-center p-7 pt-6">
+                                <div class="mb-6">
+                                    <img src="../../images/seller/Shopping List.png" alt="">
+                                </div>
+                                <h4 class="text-xl font-bold mb-3">Start Selling</h4>
+                                <p class="max-w-44 w-full text-sm font-normal">Go live and start reaching millions of potential buyers immediately. Watch your sales grow with our vast audience.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="md:hidden mb-20 flex flex-col items-center text-center">
+                        <div class="absolute top-0 right-0 md:left-0 md:right-0 flex items-center justify-center w-60 h-60 mx-auto bg-white rounded-full shadow-header">
+                            <div class="flex flex-col items-center p-7 pt-6">
+                                <div class="mb-6">
+                                    <img src="../../images/seller/Check Order.png" alt="">
+                                </div>
+                                <h4 class="text-xl font-bold mb-3">Get Registered</h4>
+                                <p class="max-w-44 w-full text-sm font-normal">Create your account through our website or mobile app with  your phone number, email and shop info.</p>
+                            </div>
+                        </div>
+                        <div class="absolute top-1/4 md:top-1/3 left-0 sm:left-1/4  flex items-center justify-center w-60 h-60 mx-auto bg-white rounded-full shadow-header">
+                            <div class="flex flex-col items-center p-7 pt-6">
+                                <div class="mb-6">
+                                    <img src="../../images/seller/Cheque.png" alt="">
+                                </div>
+                                <h4 class="text-xl font-bold mb-3">Add ID & Bank Info</h4>
+                                <p class="max-w-44 w-full text-sm font-normal ">Add in your ID & Business related details. Include necessary bank information for payments.</p>
+                            </div>
+                        </div>
+                        <div class="absolute top-1/2 md:top-0 right-0 sm:right-1/4 md:right-[28%]  flex items-center justify-center w-60 h-60 mx-auto bg-white rounded-full shadow-header">
+                            <div class="flex flex-col items-center p-7 pt-6">
+                                <div class="mb-6">
+                                    <img src="../../images/seller/Product Management.png" alt="">
+                                </div>
+                                <h4 class="text-xl font-bold mb-3">List Your Products</h4>
+                                <p class="max-w-44 w-full text-sm font-normal">List your products with detailed descriptions and high-quality images to attract more buyers effortlessly.</p>
+                            </div>
+                        </div>
+                        <div class="absolute left-0 md:left-0 md:right-0 bottom-0 md:top-1/3 flex items-center justify-center w-60 h-60 mx-auto bg-white rounded-full shadow-header">
+                            <div class="flex flex-col items-center p-7 pt-6">
+                                <div class="mb-6">
+                                    <img src="../../images/seller/Shopping List.png" alt="">
+                                </div>
+                                <h4 class="text-xl font-bold mb-3">Start Selling</h4>
+                                <p class="max-w-44 w-full text-sm font-normal">Go live and start reaching millions of potential buyers immediately. Watch your sales grow with our vast audience.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!--====================================
+             WHY SELL PART END   
+    =====================================-->
+
+    <!--====================================
+        DOWNLOAD APP BANNER PART START   
+    =====================================-->
+    <section class="container">
+        <div class="bg-gradient-to-r from-[#0133CC] to-[#9195FF] rounded-3xl mb-12 sm:mb-20 md:mt-0 mt-12 lg:mx-[100px]">
+            <div class="row">
+                <div class="col-12 sm:col-6">
+                    <div class="p-6 md:py-12 md:ps-12">
+                        <h1 class="text-4xl font-bold text-white mb-4">Download ShopDaddy Seller App</h1>
+                        <p class="text-sm font-medium text-white mb-6">The ShopDaddy Seller app is designed to help you manage and grow your e-commerce business anytime, anywhere. Enjoy the freedom to handle every detail right from your phone.</p>
+                        <div class="flex items-center gap-4 flex-wrap">
+                            <a href=""><img src="../../images/seller/play_store.png" alt="play_store"></a>
+                            <a href=""><img src="../../images/seller/apple_store.png" alt="apple_store"></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 sm:col-6 flex justify-end">
+                    <img src="../../images/seller/banner_img.png" alt="banner">
+                </div>
+            </div>
+        </div>
+    </section>
+    <!--====================================
+        DOWNLOAD APP BANNER PART END   
+    =====================================-->
+
+    <!--====================================
+            FAQ PART START   
+     =====================================-->
+     <section class="container">
+        <div class="mb-12 sm:mb-20 mx-0 lg:mx-[102px]">
+            <h3 class="text-3xl sm:text-4xl font-bold mb-6 sm:mb-12 text-center text-primary">Frequently Asked Questions</h3>
+            <div class="accordion bg-[#F9F9FA] w-full py-4 px-4 sm:px-6 cursor-pointer rounded-xl mb-4 sm:mb-6">
+                <div class=" group font-bold flex gap-4 justify-between w-full">
+                   <h6 class="text-base sm:text-xl font-medium leading-7 text-left">Do we rent/lease the hardware or do we purchase?</h6>
+                   <i class="icon lab-line-add-circle  text-2xl text-gradient"></i>
+                </div>
+                <div style="height:0px;" class="content overflow-hidden transition-all duration-500 !text-[#1F1F39]" >
+                   <p class="text-sm sm:text-base font-normal">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ipsa et reiciendis perferendis enim dolorum nihil deserunt at perspiciatis veritatis praesentium.</p>
+               </div>                 
+            </div>
+            <div class="accordion bg-[#F9F9FA] w-full py-4 px-4 sm:px-6 cursor-pointer rounded-xl mb-4 sm:mb-6">
+                <div class=" group font-bold flex gap-4 justify-between  w-full">
+                   <h6 class="text-base sm:text-xl font-medium leading-snug text-left">Do you have a return policy?</h6>
+                   <i class="icon lab-line-add-circle  text-2xl text-gradient"></i>
+                </div>
+                <div style="height:0px;" class="content overflow-hidden transition-all duration-500 !text-[#1F1F39]" >
+                   <p class="text-sm sm:text-base font-normal">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ipsa et reiciendis perferendis enim dolorum nihil deserunt at perspiciatis veritatis praesentium.</p>
+               </div>                 
+            </div>
+            <div class="accordion bg-[#F9F9FA] w-full py-4 px-4 sm:px-6 cursor-pointer rounded-xl mb-4 sm:mb-6">
+                <div  class="group font-bold flex gap-4 justify-between  w-full">
+                   <h6 class="text-base sm:text-xl font-medium leading-snug text-left">Which tablets does The Receptionist for iPad work with? Is Android supported?</h6>
+                   <i class="icon lab-line-add-circle  text-2xl text-gradient"></i>
+                </div>
+                <div style="height:0px;" class="content overflow-hidden transition-all duration-500 !text-[#1F1F39]" >
+                   <p class="text-sm sm:text-base font-normal">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ipsa et reiciendis perferendis enim dolorum nihil deserunt at perspiciatis veritatis praesentium.</p>
+               </div>                 
+            </div>
+            <div class="accordion bg-[#F9F9FA] w-full py-4 px-4 sm:px-6 cursor-pointer rounded-xl mb-4 sm:mb-6">
+                <div class=" group font-bold flex gap-4 justify-between w-full">
+                   <h6 class="text-base sm:text-xl font-medium leading-snug text-left">Do we rent/lease the hardware or do we purchase?</h6>
+                   <i class="icon lab-line-add-circle  text-2xl text-gradient"></i>
+                </div>
+                <div style="height:0px;" class="content overflow-hidden transition-all duration-500 !text-[#1F1F39]" >
+                   <p class="text-sm sm:text-base font-normal">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ipsa et reiciendis perferendis enim dolorum nihil deserunt at perspiciatis veritatis praesentium.</p>
+               </div>                 
+            </div>
+            <div class="accordion bg-[#F9F9FA] w-full py-4 px-4 sm:px-6 cursor-pointer rounded-xl mb-4 sm:mb-6">
+                <div class=" group font-bold flex gap-4 justify-between  w-full">
+                   <h6 class="text-base sm:text-xl font-medium leading-snug text-left">Do you have a return policy?</h6>
+                   <i class="icon lab-line-add-circle  text-2xl text-gradient"></i>
+                </div>
+                <div style="height:0px;" class="content overflow-hidden transition-all duration-500 !text-[#1F1F39]" >
+                   <p class="text-sm sm:text-base font-normal">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ipsa et reiciendis perferendis enim dolorum nihil deserunt at perspiciatis veritatis praesentium.</p>
+               </div>                 
+            </div>
+            <div class="accordion bg-[#F9F9FA] w-full py-4 px-4 sm:px-6 cursor-pointer rounded-xl mb-4 sm:mb-6">
+                <div  class="group font-bold flex gap-4 justify-between  w-full">
+                   <h6 class="text-base sm:text-xl font-medium leading-snug text-left">Which tablets does The Receptionist for iPad work with? Is Android supported?</h6>
+                   <i class="icon lab-line-add-circle  text-2xl text-gradient"></i>
+                </div>
+                <div style="height:0px;" class="content overflow-hidden transition-all duration-500 !text-[#1F1F39]" >
+                   <p class="text-sm sm:text-base font-normal">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ipsa et reiciendis perferendis enim dolorum nihil deserunt at perspiciatis veritatis praesentium.</p>
+               </div>                 
+            </div>
+        </div>
+     </section>
+     <!--====================================
+            FAQ PART START   
+     =====================================-->
+
+    <!--====================================
+           SUBSCRIBE PART START   
+    =====================================-->
+    <div class="bg-primary py-8 ">
+        <div class="container">
+            <div class="lg:max-w-[996px] w-full mx-auto flex md:flex-row flex-col items-center justify-between">
+                <div class="md:mb-0 mb-4 ">
+                    <h1 class="text-3xl md:text-4xl font-bold text-white mb-3">Subscribe to Our Newsletter</h1>
+                    <p class="text-sm md:text-base font-medium text-white">Subscribe to our newsletter & get notification about discounts.</p>
+                </div>
+                <form class="flex items-center rounded-xl sm:max-w-96 w-full h-12 p-1 bg-white">
+                    <input type="email" placeholder="Your email address" class="appearance-none outline-none focus:outline-none w-full h-full pl-2">
+                    <button type="submit" class="capitalize text-xs font-medium rounded-lg flex-shrink-0 p-2.5 h-full bg-primary text-white">Subscribe</button>
+                </form>
+            </div> 
+        </div>
+    </div>
+    <!--====================================
+           SUBSCRIBE PART END   
+    =====================================-->
+
+    <!--====================================
+        NOTIFICATION MODAL PART START   
+    =====================================-->
+    <div id="notification" class="modal bg-white z-[10] overflow-y-auto mt-28 lg:mt-48">
+        <div class="p-4 border-b border-light-white">
+           <h6 class="text-left text-sm font-bold">All Notifications</h6>
+        </div>
+        <div class="px-4">
+             <div class="py-3 border-b border-light-white">
+                 <p class="mb-2 text-sm font-normal">Order No: <span class="font-medium">20221221</span> & Shop: Underground Fashion has been <span class="text-negative-red font-medium">Delivered</span></p>
+                 <small class="text-light-dark">13 Nov, 2024</small>
+             </div>
+             <div class="py-3 border-b border-light-white">
+                 <p class="mb-2 text-sm font-normal">Order No: <span class="font-medium">20221221</span> & Shop: Underground Fashion has been <span class="text-negative-red font-medium">Delivered</span></p>
+                 <small class="text-light-dark">13 Nov, 2024</small>
+             </div>
+             <div class="py-3 border-b border-light-white">
+                 <p class="mb-2 text-sm font-normal">Order No: <span class="font-medium">20221221</span> & Shop: Underground Fashion has been <span class="text-negative-red font-medium">Delivered</span></p>
+                 <small class="text-light-dark">13 Nov, 2024</small>
+             </div>
+             <div class="py-3">
+                 <p class="mb-2 text-sm font-normal">Order No: <span class="font-medium">20221221</span> & Shop: Underground Fashion has been <span class="text-negative-red font-medium">Delivered</span></p>
+                 <small class="text-light-dark">13 Nov, 2024</small>
+             </div>
+        </div>
+    </div>
+    <!--====================================
+        NOTIFICATION MODAL PART END   
+    =====================================-->
+
+    <!--====================================
+            FOOTER PART START   
+    =====================================-->
+    <footer class="container">
+        <div class="mt-12">
+            <div class="grid-cols-auto md:hidden block mb-8">
+                <a href="#"><img class="mb-4 w-36" src="../../images/header/logo.png" alt="logo"></a>
+                <p class="text-sm mb-3">Discover the latest trends and enjoy seamless shopping with our exclusive collections.</p>
+                <p class="text-sm mb-3 flex items-center gap-2"><i class="lab-line-map-point text-xl"></i> House:25, Road:05, Block:A, Mirpur-2, Dhaka.</p>
+                <p class="text-sm mb-3 flex items-center gap-2"><i class="lab-line-letter text-xl"></i>Email: ebazaar@gmail.com</p>
+                <p class="text-sm mb-3 flex items-center gap-2"><i class="lab-line-call-calling text-xl"></i> Contact: 01256398745</p>
+            </div>
+            <div class="grid grid-cols-1 small:grid-cols-2 md:grid-cols-5 gap-8 md:gap-6">
+                <div class="grid-cols-auto hidden md:block">
+                    <a href="#"><img class="mb-4 w-36" src="../../images/header/logo.png" alt="logo"></a>
+                    <p class="text-sm mb-3">Discover the latest trends and enjoy seamless shopping with our exclusive collections.</p>
+                    <p class="text-sm mb-3 flex items-center gap-2"><i class="lab-line-map-point text-xl"></i> House:25, Road:05, Block:A, Mirpur-2, Dhaka.</p>
+                    <p class="text-sm mb-3 flex items-center gap-2"><i class="lab-line-letter text-xl"></i>Email: ebazaar@gmail.com</p>
+                    <p class="text-sm mb-3 flex items-center gap-2"><i class="lab-line-call-calling text-xl"></i> Contact: 01256398745</p>
+                </div>
+                    <div>
+                        <div class="sm:w-fit md:ms-auto">
+                            <h3 class="capitalize text-lg font-semibold mb-4 ">My Account</h3>
+                            <nav class="flex flex-col items-start gap-3">
+                                <a href="#" class="hover:underline">Profile</a>
+                                <a href="#" class=" hover:underline">Order History</a>
+                                <a href="#" class="hover:underline">My Wishlist</a>
+                                <a href="#" class="hover:underline">My Reviews</a>
+                                <a href="#" class=" hover:underline">Help & Support</a>
+                            </nav>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="sm:w-fit md:ms-auto">
+                            <h3 class="capitalize text-lg font-semibold mb-4">Legal</h3>
+                            <nav class="flex flex-col items-start gap-3">
+                                <a href="#" class="capitalize  hover:underline">Cookie setting</a>
+                                <a href="#" class="capitalize  hover:underline">Terms & conditions</a>
+                                <a href="#" class="capitalize hover:underline">Privacy policy</a>
+                                <a href="#" class="capitalize hover:underline">Return Policy</a>
+                                <a href="#" class="capitalize  hover:underline">Seller Policy</a>
+                                <a href="#" class="capitalize  hover:underline">FAQ</a>
+                            </nav>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="sm:w-fit md:ms-auto">
+                            <h3 class="capitalize text-lg font-semibold mb-4 ">Useful Links</h3>
+                            <nav class="flex flex-col items-start gap-3">
+                                <a href="#" class="capitalize  hover:underline">Become a Seller</a>
+                                <a href="#" class="capitalize  hover:underline">Login to Seller Panel</a>
+                                <a href="#" class="capitalize hover:underline">Become a Delivery Boy</a>
+                                <a href="#" class="capitalize hover:underline">Login to Delivery Boy</a>
+                            </nav>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="sm:w-fit md:ms-auto">
+                            <h3 class="capitalize text-lg font-semibold mb-4 ">Follow Us</h3>
+                            <div class="flex items-center gap-4 mb-8">
+                                <a href="#" class="lab-fill-facebook-round text-2xl text-primary"></a>
+                                <a href="#" class="lab-fill-instagram text-2xl text-primary"></a>
+                                <a href="#" class="lab-fill-x-icon text-2xl text-primary"></a>
+                                <a href="#" class="lab-fill-youtube text-2xl text-primary"></a>
+                            </div>
+                            <h3 class="capitalize text-lg font-semibold mb-3">Download App</h3>
+                            <nav class="flex flex-col items-center gap-3 mb-7 w-full max-w-[130px]">
+                                <a href="#"><img class="rounded-lg w-full" src="../../images/footer/play-store.png" alt="app"></a>
+                                <a href="#"><img class="rounded-lg w-full" src="../../images/footer/apple-store.png" alt="app"></a>
+                            </nav>
+                        </div>
+                    </div>
+            </div>
+            <div class="py-4 md:mt-12 border-t border-primary-slate">
+                <p class="text-sm text-left">&copy; ShopDaddy by <a target="_blank" href="https://inilabs.net/">iNiLabs</a> 2024, All Rights Reserved</p>
+            </div>
+        </div>
+    </footer>      
+    <!--====================================
+            FOOTER PART START   
+    =====================================-->
+        
+</body>
+</html>

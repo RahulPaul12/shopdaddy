@@ -1,0 +1,11 @@
+{
+  "devDependencies": {
+    "tailwindcss": "^3.4.10"
+  },
+  "scripts": {
+    "dev": "npx tailwindcss -i ./css/tailwind.css -o ./css/style.css --watch"
+  },
+  "dependencies": {
+    "intl-tel-input": "^18.5.3"
+  }
+}
